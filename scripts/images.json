@@ -1,0 +1,31 @@
+{
+  "source": "https://arham.org",
+  "note": "Photos and logos come from arham.org (AYSG's own site). scripts/build.mjs downloads them into dist/images at build time.",
+  "images": {
+    "logo.png":            { "path": "/logo.png", "resize": false },
+    "hero-pasti.jpg":      { "path": "/api/media/media/01fb48c8-c0a0-4928-b431-16777b8d304b.jpeg", "width": 1200 },
+    "anukampa.jpg":        { "path": "/1anukampa-1536x1024.jpg", "width": 828 },
+    "aahar.jpg":           { "path": "/3aahar-1536x1024.jpg", "width": 828 },
+    "medical.jpg":         { "path": "/7medical-1536x1024.jpg", "width": 828 },
+    "education.jpg":       { "path": "/6education-480x320.jpg", "resize": false },
+    "annadan.jpg":         { "path": "/2annadan-1536x1024.jpg", "width": 828 },
+    "pasti.jpg":           { "path": "/10pasti-1536x1024.jpg", "width": 828 },
+    "story-cupboard.jpg":  { "path": "/api/media/media/1500-homes-uplifted-aysgs-cupboard-distribution-initiative-bringing-dignity-to-families-1785930947269.jpeg", "width": 828 },
+    "story-chennai.jpg":   { "path": "/api/media/media/aysg-chennai-supports-education-of-65-students-through-education-sahay-initiative-1785930929593.jpeg", "width": 828 },
+    "story-jamnagar.jpg":  { "path": "/api/media/media/aysg-jamnagar-free-dental-checkup-camp-600-children-1785930384063.jpeg", "width": 828 },
+    "volunteer-chaas.jpg": { "path": "/api/media/media/4514ccdd-7d41-4193-a4d3-6b9f2e0ddaef.jpeg", "width": 1080 },
+    "cupboard.jpg":        { "path": "/api/media/media/fb91c511-6ec0-49f4-b547-c77e5729e947.jpeg", "width": 1080 },
+    "about.png":           { "path": "/Group-12-1024x611.png", "resize": false },
+    "testimonial-khushi.png": { "path": "/Ellipse-5.png", "resize": false },
+    "testimonial-moksh.png":  { "path": "/test.png", "resize": false },
+    "csr-reliance.jpg":    { "path": "/csr-partner-1.jpg", "resize": false },
+    "csr-aveva.jpg":       { "path": "/csr-partner-2.jpg", "resize": false },
+    "csr-man.jpg":         { "path": "/csr-partner-3.jpg", "resize": false },
+    "csr-sunpharma.jpg":   { "path": "/csr-partner-4.jpg", "resize": false },
+    "csr-schneider.jpg":   { "path": "/csr-partner-5.jpg", "resize": false },
+    "csr-anspl.jpg":       { "path": "/csr-partner-6.jpg", "resize": false },
+    "csr-sarjak.jpg":      { "path": "/csr-partner-7.jpg", "resize": false },
+    "csr-alfaccurate.jpg": { "path": "/csr-partner-8.jpg", "resize": false },
+    "csr-bakertilly.jpg":  { "path": "/csr-partner-9.jpg", "resize": false }
+  }
+}
