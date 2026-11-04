@@ -15,7 +15,7 @@
     "story-jamnagar.jpg":  { "path": "/api/media/media/aysg-jamnagar-free-dental-checkup-camp-600-children-1785930384063.jpeg", "width": 828 },
     "volunteer-chaas.jpg": { "path": "/api/media/media/4514ccdd-7d41-4193-a4d3-6b9f2e0ddaef.jpeg", "width": 1080 },
     "cupboard.jpg":        { "path": "/api/media/media/fb91c511-6ec0-49f4-b547-c77e5729e947.jpeg", "width": 1080 },
-    "about.png":           { "path": "/Group-12-1024x611.png", "resize": false },
+    "about.png":           { "path": "/Group-12-1024x611.png", "width": 828 },
     "testimonial-khushi.png": { "path": "/Ellipse-5.png", "resize": false },
     "testimonial-moksh.png":  { "path": "/test.png", "resize": false },
     "csr-reliance.jpg":    { "path": "/csr-partner-1.jpg", "resize": false },
