@@ -59,7 +59,7 @@ Shapes: pill buttons (`border-radius: 999px`), cards 14–22px radius, photos 18
 
 ## Interactive behaviour (JS at the end of `index.html`)
 
-- Hero impact tabs (`[data-stat]`): auto-rotate every 4.5 s, stop when a tab is clicked, respect `prefers-reduced-motion`.
+- Hero: four acts in order (`#what`, `#work`, `#impact`, `#trust`). On screens ≥1000px wide and ≥600px tall with motion allowed, `html.pin` pins them in one stage. JS clones six `.slot[data-tile]` photos into `.hero-tiles` and moves them between each act's measured slot positions as you scroll. Otherwise the acts stack normally, so all content works without JS. To move a photo, move its slot in the markup; the JS re-measures. The eight figures live as plain text in `[data-count]`: they count up once, then settle on that exact text.
 - Donate form: frequency toggle (`[data-freq]`), amount chips (`[data-amt]`), button label updates. **Payment is not connected**: submit shows a draft message. The real donation flow is https://donate.arham.org/ (Razorpay; asks PAN + address for 80G).
 - Volunteer FAQ accordion (`[data-faq]` / `[data-faqbody]`): one open at a time.
 
