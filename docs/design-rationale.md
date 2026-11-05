@@ -20,7 +20,7 @@ The earlier draft made all of them hunt: it opened with a rotating CSR statistic
 
 1. **Header: Donate, Join Us, Get help.** The three main actions stay visible while scrolling. A floating Donate button covers mobile, where most Indian online giving happens (90% of Ketto donations in 2024 came via UPI).
 
-2. **Hero: who AYSG is, then the impact numbers.** Donors look first for what an organisation does, then for scale (NN/g donation study). So "Youth-led seva for people and animals across India" comes before any figure. The Gurudev credit is a small eyebrow: it matters to the community but stays welcoming to everyone else. The same balance is used by AlwaysCare. The verified figures follow, with a "Last updated" date, because dated, current numbers build trust.
+2. **Hero: what we do, our work, impact, who stands behind it.** Donors look first for what an organisation does, then for scale (NN/g donation study). So "Youth-led seva for people and animals across India" comes before any figure. The Gurudev credit is a small eyebrow: it matters to the community but stays welcoming to everyone else. The same balance is used by AlwaysCare. The acts then move to the main programmes, all eight verified figures with a "Last updated" date (dated, current numbers build trust), and checkable facts: address, phone, origin, partners, with dashed placeholders for registration details. On desktop this is one pinned scene where the same real photos travel between acts, so the page feels like one story about real people rather than a stack of claims. Phones and reduced-motion users get the same content stacked. Because the scene is long, Get help is in the first view and in the sticky header, including on phones.
 
 3. **Dark help strip: AlwaysCare + how to ask for aid.** Someone holding an injured animal can't scroll. AlwaysCare is AYSG's own ambulance service, so the umbrella site routes there instead of duplicating it. It's dark so it stands apart from everything else.
 
@@ -55,7 +55,7 @@ The earlier draft made all of them hunt: it opened with a rotating CSR statistic
 - Uses the existing AYSG site's exact colours and fonts so it reads as the same organisation (tokens in `CLAUDE.md`).
 - Light only. The AYSG brand has no dark mode, and an automatic dark theme made the page look black on dark-mode Macs.
 - Real AYSG photos of smiling volunteers and beneficiaries, not stock imagery.
-- No heavy carousels (the hero tabs rotate but every figure is visible as a tab), no decorative noise, fast on mobile.
+- No carousels (every hero figure is visible at once), no decorative noise, no animation library, fast on mobile.
 
 ## What was deliberately left out
 

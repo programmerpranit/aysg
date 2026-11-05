@@ -10,6 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aysg.vercel.app/images/hero-pasti.jpg">
 <meta name="theme-color" content="#fff6e8">
+<link rel="icon" href="/images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap">
 <style>
@@ -32,112 +33,313 @@ a{color:#b8264f}a:hover{color:#8f1d3d}
 .g-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .g-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px;align-items:center}
 .g-more{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.g-tabs{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:16px}
 .g-help{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 .g-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .g-feat{}
 .g-foot{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
 .navlinks{display:flex;gap:4px;align-items:center}
-.tab{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:4px;padding-top:12px;border-top:2px solid rgba(23,21,26,0.15);min-height:44px}
 .chip{font-family:"Newsreader",Georgia,serif;font-size:19px;border-radius:999px;padding:8px 18px;cursor:pointer;border:1px solid #e9dccb;background:#ffffff;color:#17151a;min-height:44px}
 .seg{font-family:inherit;font-weight:600;font-size:15px;border-radius:999px;padding:10px;cursor:pointer;border:0;min-height:44px}
 input,select{width:100%;font:inherit;padding:11px 14px;border-radius:12px;border:1px solid #e9dccb;background:#ffffff;color:#17151a;box-sizing:border-box}
 label{font-weight:600;font-size:14px;display:block;margin-bottom:6px}
-@media (max-width:1000px){.g-tabs{grid-template-columns:repeat(4,minmax(0,1fr))}.g-4{grid-template-columns:repeat(2,minmax(0,1fr))}.g-more{grid-template-columns:repeat(2,minmax(0,1fr))}.g-foot{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:1000px){.g-4{grid-template-columns:repeat(2,minmax(0,1fr))}.g-more{grid-template-columns:repeat(2,minmax(0,1fr))}.g-foot{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:860px){.g-hero,.g-2,.g-3,.g-help,.g-feat{grid-template-columns:minmax(0,1fr) !important}.navlinks .plain{display:none}}
-@media (max-width:540px){.g-tabs,.g-4,.g-more,.g-fields,.g-foot{grid-template-columns:minmax(0,1fr)}.g-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:540px){.g-4,.g-more,.g-fields,.g-foot{grid-template-columns:minmax(0,1fr)}}
 </style>
 <style>[hidden]{display:none!important}</style>
+<style>
+/* tastemaker stamp | macrostructure: Long-Scroll Narrative, opening scene only | nav: N3 floating pill (kept, now sticky) | hero: pinned four-act photo morph | brand tokens locked by AYSG design system, contrast matrix in .tastemaker/style-lock.md */
+#help{scroll-margin-top:84px}
+.head-wrap{position:sticky;top:0;z-index:60;padding:12px 16px 0;margin-bottom:-78px;pointer-events:none}
+@media (max-width:520px){.head-wrap{padding:8px 10px 0;margin-bottom:-66px}}
+.site-head{pointer-events:auto;max-width:1100px;margin:0 auto;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(253,249,240,.94);border:1px solid #f3e6d2;border-radius:999px;padding:8px 8px 8px 22px;box-shadow:0 8px 28px rgba(80,40,20,.10);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.navlinks .plain{color:#17151a;text-decoration:none;font-weight:500;padding:10px 12px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center}
+.navlinks a,.wordmark span{white-space:nowrap}
+@media (hover:hover){.navlinks .plain:hover{color:#b8264f}}
+a:focus-visible,button:focus-visible{outline:3px solid #17151a;outline-offset:2px}
+.act-impact a:focus-visible{outline-color:#fff}
+
+.hero{position:relative;background:#fff6e8}
+.hero-bg,.hero-tiles,.hero-rail{display:none}
+.hero .eyebrow{color:#3d6206}
+.act{box-sizing:border-box;padding:0 24px;scroll-margin-top:0}
+.act-in{max-width:1192px;margin:0 auto}
+.act-h{font-size:clamp(2rem,3.7vw,3.25rem)}
+.act-h em{color:#b8264f}
+.tag{margin:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#3d6206;font-weight:600}
+.slot{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;background:#f3e3cf}
+
+.act-what{padding-top:100px;padding-bottom:64px;background:radial-gradient(70% 80% at 0% 100%,rgba(249,210,162,.7) 0%,rgba(249,210,162,0) 65%),linear-gradient(135deg,#fff6e8 0%,#f9d2a2 100%)}
+.what-grid{display:grid;gap:40px}
+.what-copy{display:flex;flex-direction:column;gap:20px;min-width:0}
+.hero-h1{font-size:clamp(2.5rem,5.1vw,4.75rem);line-height:1.04;letter-spacing:-.025em;color:#17151a}
+.hero-h1 em{color:#b8264f}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .08em .14em 0;margin:0 -.08em -.14em 0}
+.w>*{display:inline-block}
+.hero-lede{font-size:18px;max-width:52ch;color:#4a4750;margin:0}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+.collage{position:relative;aspect-ratio:1/1.02;width:100%}
+.collage .slot{position:absolute;left:var(--x);top:var(--y);width:var(--w);box-shadow:0 18px 40px rgba(80,40,20,.16)}
+
+.act-work{padding-top:92px;padding-bottom:64px;background:#fff6e8}
+.act-head{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 16px}
+.work-card{display:flex;flex-direction:column;gap:5px;color:#17151a;text-decoration:none;min-width:0}
+@media (hover:hover){.work-card:hover{color:#17151a}.work-card:hover .name{color:#b8264f}}
+.work-card .slot{margin-bottom:8px}
+.work-card .tag{font-size:11px}
+.name{font-size:22px;line-height:1.14}
+.desc{font-size:15px;line-height:1.4;color:#4a4750}
+.work-more{margin:24px 0 0;color:#4a4750;font-size:15px}
+
+.act-impact{padding-top:92px;padding-bottom:64px;background:#b8264f;color:#fff}
+.act-impact .eyebrow{color:#ffd9a8}
+.stamp{display:block;margin-top:4px;font-size:13px;letter-spacing:0;text-transform:none;font-weight:500;color:#fff}
+.act-impact .act-h{color:#fff;margin-top:12px}
+.act-impact .act-h em{color:#ffd9a8}
+.strip{display:none}
+.figures{list-style:none;margin:32px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}
+.fig{display:flex;flex-direction:column;gap:6px;padding-top:12px;border-top:1px solid rgba(255,255,255,.34);min-width:0}
+.fig-lg{grid-column:1/-1}
+.num{font-size:clamp(1.55rem,6.6vw,2.4rem);line-height:1;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.025em;color:#fff}
+.fig-lg .num{font-size:clamp(3.1rem,15vw,5.5rem);letter-spacing:-.04em}
+.lab{font-size:14px;line-height:1.35;color:#fff}
+.fig-lg .lab{font-size:17px}
+
+.act-trust{padding-top:92px;padding-bottom:64px;background:#fff6e8}
+.trust-grid{display:grid;gap:28px}
+.trust-main{display:flex;flex-direction:column;gap:14px;min-width:0}
+.ledger{margin:6px 0 0}
+.ledger>div{display:grid;grid-template-columns:104px minmax(0,1fr);gap:12px;padding:10px 0;border-top:1px solid #e9dccb}
+.ledger dt{font-weight:600;font-size:14px;color:#17151a}
+.ledger dd{margin:0;font-size:15px;line-height:1.45;color:#4a4750}
+.partners{display:flex;flex-direction:column;gap:12px}
+.logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.logos img{width:100%;height:58px;object-fit:contain;box-sizing:border-box;padding:8px 10px;background:#fff;border:1px solid #efe3d3;border-radius:12px}
+.trust-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.trust-photo{margin:0;display:flex;flex-direction:column;gap:8px}
+.trust-photo figcaption{font-size:13px;color:#4a4750}
+
+@media (prefers-reduced-motion:no-preference){
+  html.js .rise{animation:hRise .7s cubic-bezier(.16,1,.3,1) both;animation-delay:var(--d,0ms)}
+  html.js .w>*{animation:hWord .8s cubic-bezier(.16,1,.3,1) both;animation-delay:calc(90ms + var(--i)*52ms)}
+  html.js .pop,html.js .tile>i{animation:hPop .95s cubic-bezier(.16,1,.3,1) both;animation-delay:var(--d,0ms)}
+}
+@keyframes hRise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes hWord{from{transform:translateY(112%)}to{transform:none}}
+@keyframes hPop{from{opacity:0;transform:translateY(46px) scale(.94)}to{opacity:1;transform:none}}
+
+@media (min-width:640px){
+  .work-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .figures{grid-template-columns:repeat(12,minmax(0,1fr))}
+  .fig{grid-column:span 4}
+  .fig-lg{grid-column:span 6}
+  .fig-lg .num{font-size:clamp(3.1rem,7.4vw,5.6rem)}
+}
+@media (min-width:1000px){
+  .what-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.06fr);align-items:center;gap:40px}
+  .trust-grid{grid-template-columns:minmax(0,1.18fr) minmax(0,1fr) minmax(0,.66fr);gap:36px;align-items:start}
+  .stamp{display:inline;margin:0 0 0 12px}
+}
+@media (max-width:860px){.navlinks .plain:not(.keep){display:none}}
+@media (max-width:520px){
+  .site-head{padding:6px 6px 6px 12px;gap:6px}
+  .site-head>a{gap:8px!important}
+  .site-head>a img{width:32px!important}
+  .wordmark span:first-child{font-size:15px!important}
+  .wordmark span:last-child{font-size:9px!important;letter-spacing:.08em!important}
+  .navlinks .btn svg{display:none}
+  .ledger a{display:inline-flex;align-items:center;min-height:44px}
+  .navlinks .join{display:none}
+  .navlinks .plain.keep{padding:10px 8px;font-size:15px}
+  .navlinks .btn{padding:10px 14px}
+  .hero-cta .btn{flex:1 1 auto;justify-content:center}
+}
+
+/* Pinned mode: desktop with motion allowed. Everything else keeps the stacked layout above. */
+html{--vh:100vh}
+@supports (height:1dvh){html{--vh:100dvh}}
+html.pin .draft-bar~.head-wrap{margin-bottom:-111px}
+html.pin .hero{height:calc(var(--vh) + 255vh);background:none}
+html.pin .hero-stage{position:sticky;top:0;height:var(--vh);overflow:hidden}
+html.pin .hero-bg,html.pin .hero-tiles{display:block;position:absolute;inset:0;pointer-events:none}
+html.pin .hero-bg{background:radial-gradient(70% 80% at 0% 100%,rgba(249,210,162,.7) 0%,rgba(249,210,162,0) 65%),linear-gradient(135deg,#fff6e8 0%,#f9d2a2 100%)}
+html.pin .hero-bg i{position:absolute;inset:0;opacity:0;will-change:opacity}
+html.pin .bg-berry{background:#b8264f}
+html.pin .bg-cream{background:#fff6e8}
+html.pin .act{position:absolute;inset:0;padding:96px 24px 76px;background:none;display:flex;align-items:center;opacity:0;pointer-events:none;will-change:opacity,transform}
+html.pin .act-in{width:100%;max-width:1440px}
+html.pin .act[data-act="0"]{opacity:1;pointer-events:auto}
+html.pin .slot{opacity:0;box-shadow:none;background:none}
+html.pin .pop{animation:none!important}
+html.pin .act-what{padding-top:122px}
+html.pin .collage{aspect-ratio:auto;height:min(calc(var(--vh) - 198px),820px);width:min(100%,calc(min(var(--vh) - 198px,820px)*.98));margin-left:auto}
+html.pin .hero-h1{font-size:clamp(2.5rem,min(5vw,8.4vh),5.4rem)}
+html.pin .act-h{font-size:clamp(1.9rem,min(3.4vw,5.6vh),3.6rem)}
+@media (max-height:700px){html.pin .desc{display:none}}
+html.pin .tile{position:absolute;left:0;top:0;width:440px;aspect-ratio:4/5;transform-origin:0 0;will-change:transform,opacity}
+html.pin .tile>i{display:block;width:100%;height:100%;border-radius:18px;overflow:hidden;box-shadow:0 26px 60px rgba(80,40,20,.2)}
+html.pin .tile img{display:block;width:100%;height:100%;object-fit:cover}
+html.pin .work-grid{justify-content:space-between;grid-template-columns:repeat(4,min(23.5%,calc((var(--vh) - 424px)*.8)))}
+html.pin .act-head{margin-bottom:20px}
+html.pin .work-more{margin-top:18px}
+html.pin .impact-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px}
+html.pin .strip{display:grid;grid-template-columns:repeat(6,58px);gap:8px;flex:none}
+html.pin .figures{margin-top:clamp(18px,3.4vh,36px);gap:clamp(14px,2.6vh,28px) 24px}
+html.pin .fig-lg .num{font-size:clamp(3.2rem,min(7vw,12.5vh),6.4rem)}
+html.pin .num{font-size:clamp(1.6rem,min(3vw,5vh),2.7rem)}
+html.pin .ledger>div{padding:8px 0}
+html.pin .trust-photo .slot{width:100%}
+html.pin .logos img{height:clamp(48px,10vh,84px)}
+html.pin .hero-rail{display:flex;position:absolute;left:50%;bottom:14px;transform:translateX(-50%);gap:2px;padding:4px;background:rgba(253,249,240,.94);border:1px solid #f3e6d2;border-radius:999px;box-shadow:0 8px 28px rgba(80,40,20,.14)}
+.hero-rail a{display:flex;align-items:center;min-height:44px;box-sizing:border-box;padding:0 16px;border-radius:999px;color:#4a4750;font-size:14px;font-weight:600;text-decoration:none}
+.hero-rail a:hover{color:#b8264f}
+.hero-rail a[aria-current="true"]{background:#b8264f;color:#fff}
+html.measuring .act{transform:none!important}
+</style>
+<script>(function(d){d.classList.add('js');try{if(matchMedia('(min-width:1000px) and (min-height:600px) and (prefers-reduced-motion:no-preference)').matches)d.classList.add('pin')}catch(e){}})(document.documentElement)</script>
 </head>
 <body>
 <div style="background: #ffffff; min-height: 100%">
 
-<div style="background: #4d7a08; color: #ffffff; text-align: center; font-size: 13px; font-weight: 600; padding: 6px 16px">Draft for review · dashed boxes mark details AYSG still needs to supply</div>
+<div class="draft-bar" style="position: relative; z-index: 70; background: #4d7a08; color: #ffffff; text-align: center; font-size: 13px; font-weight: 600; padding: 6px 16px">Draft for review · dashed boxes mark details AYSG still needs to supply</div>
 
-<div style="background: radial-gradient(70% 80% at 0% 100%, rgba(249,210,162,0.7) 0%, rgba(249,210,162,0) 65%), linear-gradient(135deg, #fff6e8 0%, #f9d2a2 100%); padding-top: 16px; padding-bottom: 88px">
-
-<div style="padding-left: 16px; padding-right: 16px">
-<header style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; background: rgba(253,249,240,0.92); border: 1px solid #f3e6d2; border-radius: 999px; padding: 8px 8px 8px 22px; box-shadow: 0 8px 28px rgba(80,40,20,0.10)">
+<div class="head-wrap">
+<header class="site-head">
 <a href="#top" aria-label="Arham Yuva Seva Group home" style="display: flex; align-items: center; gap: 12px; text-decoration: none">
 <img src="/images/logo.png" alt="" width="40" height="43" style="width: 40px; height: auto">
-<span style="display: flex; flex-direction: column; line-height: 1.1"><span style="color: #b8264f; font-weight: 700; font-size: 18px; letter-spacing: 0.02em">ARHAM</span><span style="color: #4a4750; font-weight: 600; font-size: 12px; letter-spacing: 0.14em">YUVA SEVA GROUP</span></span>
+<span class="wordmark" style="display: flex; flex-direction: column; line-height: 1.1"><span style="color: #b8264f; font-weight: 700; font-size: 18px; letter-spacing: 0.02em">ARHAM</span><span style="color: #4a4750; font-weight: 600; font-size: 12px; letter-spacing: 0.14em">YUVA SEVA GROUP</span></span>
 </a>
 <nav class="navlinks" aria-label="Main">
-<a class="plain" href="#initiatives" style="color: #17151a; text-decoration: none; font-weight: 500; padding: 10px 12px">What we do</a>
-<a class="plain" href="#campaigns" style="color: #17151a; text-decoration: none; font-weight: 500; padding: 10px 12px">Campaigns</a>
-<a class="plain" href="#drives" style="color: #17151a; text-decoration: none; font-weight: 500; padding: 10px 12px">Drives</a>
-<a class="plain" href="#help" style="color: #17151a; text-decoration: none; font-weight: 500; padding: 10px 12px">Get help</a>
-<a class="btn" href="#volunteer">Join Us</a>
+<a class="plain" href="#initiatives">What we do</a>
+<a class="plain" href="#campaigns">Campaigns</a>
+<a class="plain" href="#drives">Drives</a>
+<a class="plain keep" href="#help">Get help</a>
+<a class="btn join" href="#volunteer">Join Us</a>
 <a class="btn btn-p" href="#give"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.4 1.1 4.1 2.3h3C14.2 6.1 15.6 5 17.6 5 21 5 23.1 8.4 21.6 11.8 19.5 16.4 12 21 12 21z"></path></svg>Donate</a>
 </nav>
 </header>
 </div>
 
-<div id="top" class="wrap" style="padding-top: 72px">
-<div class="g-hero">
-<div style="display: flex; flex-direction: column; gap: 22px; min-width: 0">
-<p class="eyebrow">Inspired by Rashtrasant Param Gurudev Shree Namramuni Maharaj Saheb</p>
-<h1 class="serif" style="font-size: clamp(2.1rem, 4.2vw, 3.5rem); color: #17151a">Youth-led seva for <span style="color: #b8264f">people and animals</span> across India</h1>
-<p style="font-size: 18px; max-width: 52ch; color: #4a4750; margin: 0">Meals for those who go without, medical and dialysis support, education for rural and tribal children, and care for animals in need. All of it is run by Arham Yuva Seva Group volunteers, who each give 8 hours every month.</p>
-<div style="display: flex; gap: 10px; flex-wrap: wrap">
+<div id="top" class="hero">
+<div class="hero-stage">
+<div class="hero-bg" aria-hidden="true"><i class="bg-berry"></i><i class="bg-cream"></i></div>
+<div class="hero-tiles" aria-hidden="true"></div>
+
+<section class="act act-what" id="what" data-act="0" aria-label="What we do">
+<div class="act-in what-grid">
+<div class="what-copy">
+<p class="eyebrow rise" style="--d: 0ms">Inspired by Rashtrasant Param Gurudev Shree Namramuni Maharaj Saheb</p>
+<h1 class="serif hero-h1"><span class="w" style="--i: 0"><span>Youth-led</span></span> <span class="w" style="--i: 1"><span>seva</span></span> <span class="w" style="--i: 2"><span>for</span></span> <span class="w" style="--i: 3"><em>people</em></span> <span class="w" style="--i: 4"><em>and</em></span> <span class="w" style="--i: 5"><em>animals</em></span> <span class="w" style="--i: 6"><span>across</span></span> <span class="w" style="--i: 7"><span>India</span></span></h1>
+<p class="hero-lede rise" style="--d: 620ms">Meals for those who go without, medical and dialysis support, education for rural and tribal children, and care for animals in need. All of it is run by Arham Yuva Seva Group volunteers, who each give 8 hours every month.</p>
+<div class="hero-cta rise" style="--d: 740ms">
 <a class="btn btn-p" href="#give">Donate</a>
 <a class="btn" href="#volunteer">Volunteer with us</a>
 <a class="btn" href="#help">Get help</a>
 </div>
 </div>
-<div class="ph" style="aspect-ratio: 4 / 3"><img src="/images/hero-pasti.jpg" alt="AYSG volunteers at a Maha Pasti Abhiyaan newspaper collection drive" loading="eager" fetchpriority="high" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0"></div>
-</div>
-
-<div style="margin-top: 64px; display: flex; flex-direction: column; gap: 14px">
-<div style="display: flex; gap: 16px; align-items: baseline; flex-wrap: wrap"><p class="eyebrow">Impact to date</p><span style="color: #5b5862; font-size: 14px">Last updated 14 October 2026</span></div>
-<div style="display: flex; flex-direction: column; gap: 4px" aria-live="polite">
-<div id="bigN" class="serif" style="font-size: clamp(3.4rem, 9vw, 7.2rem); line-height: 1; color: #b8264f; letter-spacing: -0.045em">6,72,000+</div>
-<div id="bigL" class="serif" style="font-size: clamp(1.4rem, 2.6vw, 2.4rem); color: #17151a">Lives impacted under CSR</div>
-</div>
-<div class="g-tabs" role="tablist" aria-label="Impact figures" style="margin-top: 18px">
-
-<button class="tab" type="button" role="tab" aria-selected="true" data-stat="0" style="border-top-color: #b8264f; opacity: 1">
-<span class="serif" style="font-size: 24px; color: #17151a; line-height: 1.1">6,72,000+</span>
-<span style="font-size: 14px; color: #4a4750; line-height: 1.35">Lives impacted under CSR</span>
-</button>
-
-<button class="tab" type="button" role="tab" aria-selected="false" data-stat="1" style="opacity: 0.55">
-<span class="serif" style="font-size: 24px; color: #17151a; line-height: 1.1">5,00,000</span>
-<span style="font-size: 14px; color: #4a4750; line-height: 1.35">Meals served every year</span>
-</button>
-
-<button class="tab" type="button" role="tab" aria-selected="false" data-stat="2" style="opacity: 0.55">
-<span class="serif" style="font-size: 24px; color: #17151a; line-height: 1.1">12,01,407+</span>
-<span style="font-size: 14px; color: #4a4750; line-height: 1.35">Buttermilk glasses distributed</span>
-</button>
-
-<button class="tab" type="button" role="tab" aria-selected="false" data-stat="3" style="opacity: 0.55">
-<span class="serif" style="font-size: 24px; color: #17151a; line-height: 1.1">1,76,482+</span>
-<span style="font-size: 14px; color: #4a4750; line-height: 1.35">Kg of newspapers collected</span>
-</button>
-
-<button class="tab" type="button" role="tab" aria-selected="false" data-stat="4" style="opacity: 0.55">
-<span class="serif" style="font-size: 24px; color: #17151a; line-height: 1.1">1,00,000</span>
-<span style="font-size: 14px; color: #4a4750; line-height: 1.35">Books distributed to kids</span>
-</button>
-
-<button class="tab" type="button" role="tab" aria-selected="false" data-stat="5" style="opacity: 0.55">
-<span class="serif" style="font-size: 24px; color: #17151a; line-height: 1.1">₹25,00,000</span>
-<span style="font-size: 14px; color: #4a4750; line-height: 1.35">Worth of medical aid (INR)</span>
-</button>
-
-<button class="tab" type="button" role="tab" aria-selected="false" data-stat="6" style="opacity: 0.55">
-<span class="serif" style="font-size: 24px; color: #17151a; line-height: 1.1">10,00,000</span>
-<span style="font-size: 14px; color: #4a4750; line-height: 1.35">Tonnes of fodder distributed</span>
-</button>
-
-<button class="tab" type="button" role="tab" aria-selected="false" data-stat="7" style="opacity: 0.55">
-<span class="serif" style="font-size: 24px; color: #17151a; line-height: 1.1">55,000+</span>
-<span style="font-size: 14px; color: #4a4750; line-height: 1.35">Blankets distributed</span>
-</button>
-
+<div class="collage">
+<img class="slot pop" data-tile="anukampa" style="--x: 0%; --y: 10%; --w: 27%; --d: 240ms; object-position: 42% 50%" src="/images/anukampa.jpg" alt="Volunteers caring for a cow under Arham Anukampa" fetchpriority="high" decoding="async">
+<img class="slot pop" data-tile="aahar" style="--x: 2.5%; --y: 46%; --w: 24.5%; --d: 420ms; object-position: 48% 50%" src="/images/aahar.jpg" alt="Children holding plates of food at an Arham Aahar drive" decoding="async">
+<img class="slot pop" data-tile="pasti" style="--x: 29%; --y: 0%; --w: 44%; --d: 120ms; object-position: 50% 42%" src="/images/hero-pasti.jpg" alt="AYSG volunteers at a Maha Pasti Abhiyaan newspaper collection drive" fetchpriority="high" decoding="async">
+<img class="slot pop" data-tile="chaas" style="--x: 29%; --y: 57%; --w: 33%; --d: 540ms; object-position: 60% 40%" src="/images/volunteer-chaas.jpg" alt="A man drinking buttermilk at an AYSG chaas distribution" decoding="async">
+<img class="slot pop" data-tile="education" style="--x: 75%; --y: 8%; --w: 30%; --d: 320ms; object-position: 36% 50%" src="/images/education.jpg" alt="Smiling students with Arham Yuva Seva Group school bags" decoding="async">
+<img class="slot pop" data-tile="medical" style="--x: 64%; --y: 57%; --w: 27%; --d: 620ms; object-position: 50% 50%" src="/images/medical.jpg" alt="AYSG volunteers visiting patients under Arham Medical Sahay" decoding="async">
 </div>
 </div>
+</section>
+
+<section class="act act-work" id="work" data-act="1" aria-labelledby="work-h">
+<div class="act-in">
+<div class="act-head">
+<p class="eyebrow">Our work</p>
+<h2 class="serif act-h" id="work-h">Nine initiatives, from a hot meal to <em>an animal in need</em></h2>
+</div>
+<div class="work-grid">
+<a class="work-card" href="#initiatives"><img class="slot" data-tile="anukampa" style="object-position: 42% 50%" src="/images/anukampa.jpg" alt="" loading="lazy" decoding="async"><span class="tag">Animal welfare</span><span class="serif name">Arham Anukampa</span><span class="desc">Shelter, food, water and healthcare for animals.</span></a>
+<a class="work-card" href="#initiatives"><img class="slot" data-tile="aahar" style="object-position: 48% 50%" src="/images/aahar.jpg" alt="" loading="lazy" decoding="async"><span class="tag">Food support</span><span class="serif name">Arham Aahar</span><span class="desc">Hot meals for people who lack a daily one.</span></a>
+<a class="work-card" href="#initiatives"><img class="slot" data-tile="medical" style="object-position: 50% 50%" src="/images/medical.jpg" alt="" loading="lazy" decoding="async"><span class="tag">Medical support</span><span class="serif name">Arham Medical Sahay</span><span class="desc">Checkups, consultations and treatment support.</span></a>
+<a class="work-card" href="#initiatives"><img class="slot" data-tile="education" style="object-position: 36% 50%" src="/images/education.jpg" alt="" loading="lazy" decoding="async"><span class="tag">Education</span><span class="serif name">Arham Education Sahay</span><span class="desc">Support for students from rural and tribal communities.</span></a>
+</div>
+<p class="work-more">Plus Dialysis Sahay, Annadan Sahay, Paathshala, Ashram Sahay and Pasti Collection, and <a href="https://alwayscare.org/">AlwaysCare</a>, our free animal ambulance service. <a href="#initiatives">See them all&nbsp;→</a></p>
+</div>
+</section>
+
+<section class="act act-impact" id="impact" data-act="2" aria-labelledby="impact-h">
+<div class="act-in">
+<div class="impact-head">
+<div>
+<p class="eyebrow">Impact to date <span class="stamp">Last updated 14 October 2026</span></p>
+<h2 class="serif act-h" id="impact-h">What all that seva <em>adds up to</em></h2>
+</div>
+<div class="strip" aria-hidden="true">
+<img class="slot" data-tile="pasti" style="object-position: 50% 42%" src="/images/hero-pasti.jpg" alt="" loading="lazy">
+<img class="slot" data-tile="anukampa" style="object-position: 42% 50%" src="/images/anukampa.jpg" alt="" loading="lazy">
+<img class="slot" data-tile="aahar" style="object-position: 48% 50%" src="/images/aahar.jpg" alt="" loading="lazy">
+<img class="slot" data-tile="chaas" style="object-position: 60% 40%" src="/images/volunteer-chaas.jpg" alt="" loading="lazy">
+<img class="slot" data-tile="medical" style="object-position: 50% 50%" src="/images/medical.jpg" alt="" loading="lazy">
+<img class="slot" data-tile="education" style="object-position: 36% 50%" src="/images/education.jpg" alt="" loading="lazy">
+</div>
+</div>
+<ul class="figures">
+<li class="fig fig-lg"><span class="serif num" data-count>6,72,000+</span><span class="lab">Lives impacted under CSR</span></li>
+<li class="fig fig-lg"><span class="serif num" data-count>5,00,000</span><span class="lab">Meals served every year</span></li>
+<li class="fig"><span class="serif num" data-count>12,01,407+</span><span class="lab">Buttermilk glasses distributed</span></li>
+<li class="fig"><span class="serif num" data-count>1,76,482+</span><span class="lab">Kg of newspapers collected</span></li>
+<li class="fig"><span class="serif num" data-count>1,00,000</span><span class="lab">Books distributed to kids</span></li>
+<li class="fig"><span class="serif num" data-count>₹25,00,000</span><span class="lab">Worth of medical aid (INR)</span></li>
+<li class="fig"><span class="serif num" data-count>10,00,000</span><span class="lab">Tonnes of fodder distributed</span></li>
+<li class="fig"><span class="serif num" data-count>55,000+</span><span class="lab">Blankets distributed</span></li>
+</ul>
+</div>
+</section>
+
+<section class="act act-trust" id="trust" data-act="3" aria-labelledby="trust-h">
+<div class="act-in trust-grid">
+<div class="trust-main">
+<p class="eyebrow">Who stands behind this</p>
+<h2 class="serif act-h" id="trust-h">A real office, named partners and <em>dated numbers</em></h2>
+<dl class="ledger">
+<div><dt>Head office</dt><dd>Parasdham, Vallabh Baug Lane, Ghatkopar East, Mumbai 400077. Open 10:00am to 6:00pm.</dd></div>
+<div><dt>Talk to us</dt><dd><a href="tel:+917666708869">+91 7666708869</a> · <a href="mailto:support@arham.org">support@arham.org</a></dd></div>
+<div><dt>How it began</dt><dd>In Mulund, Mumbai, with 50 people. Today, 1,200+ members across around 60 centres.</dd></div>
+<div><dt>Tax benefit</dt><dd>Donations to AYSG are eligible for tax benefits under 80G.</dd></div>
+</dl>
+<p class="todo"><b style="color: #17151a">Still needed from AYSG:</b> [LEGAL ENTITY NAME] · [REGISTRATION NO.] · [12A NO.] · [80G NO.] · [ANNUAL REPORT LINK]</p>
+</div>
+<div class="trust-side">
+<div class="partners">
+<p class="tag">Our CSR partners</p>
+<div class="logos">
+<img src="/images/csr-reliance.jpg" alt="Reliance Foundation" loading="lazy">
+<img src="/images/csr-aveva.jpg" alt="Aveva" loading="lazy">
+<img src="/images/csr-man.jpg" alt="MAN" loading="lazy">
+<img src="/images/csr-sunpharma.jpg" alt="Sun Pharma" loading="lazy">
+<img src="/images/csr-schneider.jpg" alt="Schneider Electric" loading="lazy">
+<img src="/images/csr-anspl.jpg" alt="ANSPL" loading="lazy">
+<img src="/images/csr-sarjak.jpg" alt="Sarjak" loading="lazy">
+<img src="/images/csr-alfaccurate.jpg" alt="AlfAccurate Advisors" loading="lazy">
+<img src="/images/csr-bakertilly.jpg" alt="Baker Tilly DHC" loading="lazy">
+</div>
+</div>
+<div class="trust-cta">
+<a class="btn btn-p" href="#give">Donate</a>
+<a class="btn" href="#volunteer">Volunteer with us</a>
+</div>
+</div>
+<figure class="trust-photo">
+<img class="slot" data-tile="pasti" style="object-position: 50% 42%" src="/images/hero-pasti.jpg" alt="" loading="lazy">
+<figcaption>Arhamites at a Maha Pasti Abhiyaan drive</figcaption>
+</figure>
+</div>
+</section>
+
+<nav class="hero-rail" aria-label="Sections of this introduction">
+<a href="#what" data-rail="0">What we do</a>
+<a href="#work" data-rail="1">Our work</a>
+<a href="#impact" data-rail="2">Impact</a>
+<a href="#trust" data-rail="3">Who we are</a>
+</nav>
 </div>
 </div>
 
@@ -549,13 +751,120 @@ label{font-weight:600;font-size:14px;display:block;margin-bottom:6px}
 </div>
 <script>
 (function(){
-  var tabs=[].slice.call(document.querySelectorAll('[data-stat]'));
-  var bigN=document.getElementById('bigN'), bigL=document.getElementById('bigL');
-  var cur=0, stopped=false;
-  function sel(i){cur=i;tabs.forEach(function(b,j){var on=j===i;b.setAttribute('aria-selected',on?'true':'false');b.setAttribute('style',on?'border-top-color: #b8264f; opacity: 1':'opacity: 0.55');});
-    bigN.textContent=tabs[i].children[0].textContent;bigL.textContent=tabs[i].children[1].textContent;}
-  tabs.forEach(function(b,i){b.addEventListener('click',function(){stopped=true;sel(i);});});
-  if(!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)){setInterval(function(){if(!stopped)sel((cur+1)%tabs.length);},4500);}
+  /* Hero. Stacked by default. On desktop with motion allowed, the four acts share one
+     pinned stage and the photos travel between matching .slot positions in each act. */
+  var root=document.documentElement, hero=document.querySelector('.hero'), stage=document.querySelector('.hero-stage');
+  var mq=window.matchMedia('(min-width:1000px) and (min-height:600px) and (prefers-reduced-motion:no-preference)');
+  var calm=window.matchMedia('(prefers-reduced-motion:reduce)');
+  var acts=[].slice.call(document.querySelectorAll('.act'));
+  var rail=[].slice.call(document.querySelectorAll('[data-rail]'));
+  var layer=document.querySelector('.hero-tiles');
+  var bgBerry=document.querySelector('.bg-berry'), bgCream=document.querySelector('.bg-cream');
+  var nums=[].slice.call(document.querySelectorAll('[data-count]'));
+  var names=['pasti','anukampa','aahar','chaas','education','medical'], tiles=[];
+  var LAST=acts.length-1, TAIL=.25, BASE=440, cur=0, target=0, raf=0, counted=false;
+  function clamp(v){return v<0?0:v>1?1:v;}
+  function smooth(t){return t*t*(3-2*t);}
+
+  names.forEach(function(name,i){
+    var first=document.querySelector('.slot[data-tile="'+name+'"]');
+    var el=document.createElement('div');el.className='tile';
+    var wrap=document.createElement('i');wrap.style.setProperty('--d',first.style.getPropertyValue('--d')||'0ms');
+    var img=document.createElement('img');img.src=first.getAttribute('src');img.alt='';img.style.objectPosition=first.style.objectPosition;
+    wrap.appendChild(img);el.appendChild(wrap);layer.appendChild(el);
+    tiles.push({name:name,el:el,idx:i,rects:[]});
+  });
+
+  function measure(){
+    root.classList.add('measuring');
+    var s=stage.getBoundingClientRect();
+    tiles.forEach(function(t){
+      t.rects=acts.map(function(a){
+        var slot=a.querySelector('.slot[data-tile="'+t.name+'"]');if(!slot)return null;
+        var r=slot.getBoundingClientRect();return {x:r.left-s.left,y:r.top-s.top,s:r.width/BASE};
+      });
+    });
+    root.classList.remove('measuring');
+  }
+  function renderTile(t,p){
+    var seg=Math.min(Math.floor(p),LAST-1), f=p-seg, k=t.idx*.05;
+    f=smooth(clamp((f-k)/(1-5*.05)));
+    var a=t.rects[seg], b=t.rects[seg+1], o=1, from=a, to=b;
+    if(!a&&!b){t.el.style.opacity=0;return;}
+    if(!a){from=b;o=f;}else if(!b){to=a;o=1-f;}
+    var x=from.x+(to.x-from.x)*f, y=from.y+(to.y-from.y)*f, sc=from.s+(to.s-from.s)*f;
+    t.el.style.opacity=o;
+    t.el.style.transform='translate3d('+x.toFixed(1)+'px,'+y.toFixed(1)+'px,0) scale('+sc.toFixed(4)+')';
+  }
+  function render(p){
+    tiles.forEach(function(t){renderTile(t,p);});
+    acts.forEach(function(a,i){
+      var d=Math.abs(p-i), o=1-clamp(d/.54);
+      a.style.opacity=o;a.style.transform='translate3d(0,'+((i-p)*44).toFixed(1)+'px,0)';
+      a.style.pointerEvents=d<.25?'auto':'none';
+    });
+    bgBerry.style.opacity=p>=2?1:clamp(1-(2-p)/.6);
+    bgCream.style.opacity=clamp((p-2.35)/.55);
+    var on=Math.round(p);
+    rail.forEach(function(r,i){if(i===on)r.setAttribute('aria-current','true');else r.removeAttribute('aria-current');});
+    if(p>1.72)runCounts();
+  }
+  function scrollTarget(){
+    var range=hero.offsetHeight-window.innerHeight, top=hero.getBoundingClientRect().top;
+    var raw=clamp(-top/range)*(LAST+TAIL);
+    raw=Math.min(raw,LAST);
+    var i=Math.min(Math.floor(raw),LAST-1), f=raw-i;
+    return i+smooth(clamp((f-.28)/.56));
+  }
+  function tick(){
+    cur+=(target-cur)*.16;
+    if(Math.abs(target-cur)<.0008)cur=target;
+    render(cur);
+    raf=cur===target?0:requestAnimationFrame(tick);
+  }
+  function onScroll(){target=scrollTarget();if(!raf)raf=requestAnimationFrame(tick);}
+  function goToAct(i){
+    var range=hero.offsetHeight-window.innerHeight, top=hero.getBoundingClientRect().top+window.pageYOffset;
+    window.scrollTo({top:top+(i+.12)/(LAST+TAIL)*range,behavior:'smooth'});
+  }
+  function setup(){
+    var pin=mq.matches;
+    root.classList.toggle('pin',pin);
+    window.removeEventListener('scroll',onScroll);
+    if(raf){cancelAnimationFrame(raf);raf=0;}
+    acts.forEach(function(a){a.style.opacity='';a.style.transform='';a.style.pointerEvents='';});
+    if(!pin)return;
+    measure();cur=target=scrollTarget();render(cur);
+    window.addEventListener('scroll',onScroll,{passive:true});
+  }
+  rail.forEach(function(r,i){r.addEventListener('click',function(e){e.preventDefault();goToAct(i);});});
+  acts.forEach(function(a,i){a.addEventListener('focusin',function(){if(root.classList.contains('pin')&&Math.abs(cur-i)>.25){var range=hero.offsetHeight-window.innerHeight,top=hero.getBoundingClientRect().top+window.pageYOffset;window.scrollTo(0,top+(i+.12)/(LAST+TAIL)*range);}});});
+  (mq.addEventListener?mq.addEventListener('change',setup):mq.addListener(setup));
+  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(setup,120);});
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(setup);
+  window.addEventListener('load',setup);
+  setup();
+
+  /* Figures count up once, then always settle on the exact text in the markup. */
+  function runCounts(){
+    if(counted)return;counted=true;
+    if(calm.matches)return;
+    var start=performance.now(), DUR=1300;
+    var items=nums.map(function(n){
+      var txt=n.textContent, v=+txt.replace(/[^0-9]/g,'');
+      n.setAttribute('aria-label',txt);
+      return {n:n,txt:txt,v:v,pre:txt.charAt(0)==='₹'?'₹':'',post:txt.slice(-1)==='+'?'+':''};
+    });
+    (function step(now){
+      var t=clamp((now-start)/DUR), e=1-Math.pow(1-t,4);
+      items.forEach(function(it){it.n.textContent=t===1?it.txt:it.pre+Math.round(it.v*e).toLocaleString('en-IN')+it.post;});
+      if(t<1)requestAnimationFrame(step);
+    })(start);
+  }
+  if(!root.classList.contains('pin')&&'IntersectionObserver' in window&&!calm.matches){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){runCounts();io.disconnect();}});},{threshold:.25});
+    io.observe(document.querySelector('.figures'));
+  }
 
   var freq='monthly', amt=1000, btn=document.getElementById('giveBtn'), msg=document.getElementById('formMsg');
   var on='background: #ffffff; color: #b8264f; box-shadow: 0 2px 8px rgba(0,0,0,0.08)', off='background: transparent; color: #4a4750';
