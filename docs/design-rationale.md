@@ -24,19 +24,19 @@ The earlier draft made all of them hunt: it opened with a rotating CSR statistic
 
 3. **Dark help strip: AlwaysCare + how to ask for aid.** Someone holding an injured animal can't scroll. AlwaysCare is AYSG's own ambulance service, so the umbrella site routes there instead of duplicating it. It's dark so it stands apart from everything else.
 
-4. **Initiatives: people and animals side by side.** Mirrors AYSG's dual identity. The four biggest programmes get photos and counts; the other five are compact cards so nine initiatives don't overwhelm. AlwaysCare appears here as the animal-ambulance arm.
+4. **Initiatives: people and animals side by side.** Mirrors AYSG's dual identity. The heading is split across a photo of children and a photo of animal care that close together as you scroll, meeting at "side by side". All nine plus AlwaysCare then sit in a mosaic of mixed-size tiles, each linking to its arham.org page, so every programme shows its real photo and figure at once and the size differences stop ten items feeling like a wall. Arham Aahar, the largest figure, gets the biggest tile. Dialysis and AlwaysCare have no photo yet, so they show a visible placeholder instead of a borrowed picture.
 
-5. **Stories.** Dated, real and local (Chennai, Jamnagar, cupboard distribution). They show the work is current and spread across cities. Each pairs with a number: the "one named story beats statistics" effect failed a 2024 replication, so stories alone aren't relied on.
+5. **Stories.** Dated, real and local (Chennai, Jamnagar, cupboard distribution). They show the work is current and spread across cities. Each pairs with a number: the "one named story beats statistics" effect failed a 2024 replication, so stories alone aren't relied on. Each link opens the real post on arham.org. The source images are graphic banners, so the small ones are cropped to their photo side.
 
-6. **Campaigns band.** Jain giving clusters around specific campaigns, occasions and sponsorship units rather than general appeals (e.g. Jivdaya Mahotsav, sponsorship tiers on Parasdham). Real campaigns (chaas, pasti, cupboards, notebooks) give donors something concrete to back. Pasti lets people help without money. Pattern borrowed from Charitics' donation band; the goal bar stays empty until AYSG supplies a goal it can keep current.
+6. **Campaigns band.** Jain giving clusters around specific campaigns, occasions and sponsorship units rather than general appeals (e.g. Jivdaya Mahotsav, sponsorship tiers on Parasdham). Real campaigns (chaas, pasti, cupboards, notebooks) give donors something concrete to back. Pasti lets people help without money. Pattern borrowed from Charitics' donation band; the goal bar stays empty until AYSG supplies a goal it can keep current. On desktop the section pins and the campaigns move sideways one at a time under the heading, with a four-part step bar that fills as each arrives, so "One step at a time" is shown as well as said. Phones and reduced-motion users get the same cards stacked.
 
 7. **Donate form.** Monthly SIP is the default because recurring giving matters most to an NGO and "SIP" is a word Indian donors already use. The occasion line (birthdays, anniversaries, Paryushan) matches how the community already gives. The 80G line answers the tax question before it's asked. It is not the lead message, because the new tax regime has no 80G deduction.
 
-8. **Volunteer: 8 hours a month, questions answered.** Youth's main barriers are time and not knowing what they'd do (UN volunteering survey, CRY/GT 2024). The four expandable answers cover exactly that: what, how much time, what you get, who can join. "Usually on a Sunday" makes the commitment feel doable. Accordion pattern borrowed from Charitics.
+8. **Volunteer: 8 hours a month, questions answered.** Youth's main barriers are time and not knowing what they'd do (UN volunteering survey, CRY/GT 2024). The four expandable answers cover exactly that: what, how much time, what you get, who can join. "Usually on a Sunday" makes the commitment feel doable, and the four-Sundays strip shows the same arithmetic as a picture. Accordion pattern borrowed from Charitics.
 
 9. **Upcoming drives.** 19% of students say they can't find volunteering opportunities. Cards with a date and city turn "join us" into "join this, here, on this day". Pattern borrowed from Charitics' event cards.
 
-10. **Volunteer quotes.** Real team members, named with their city, so peers persuade peers.
+10. **Volunteer quotes.** Real team members, named with their city, so peers persuade peers. Set large, and on desktop the words ink in as you scroll, so the short excerpts get read slowly.
 
 11. **About + trust.** Origin story (Mulund, 50 people), the meaning of "Arham", scale (1,200+ members, ~60 centres). It sits lower because committed visitors scroll for it while first-timers need actions first. The trust block (registration, 80G number, named coordinators, annual report) belongs here. Lack of trust and transparency is the top reason Indian donors hold back.
 
@@ -55,7 +55,8 @@ The earlier draft made all of them hunt: it opened with a rotating CSR statistic
 - Uses the existing AYSG site's exact colours and fonts so it reads as the same organisation (tokens in `CLAUDE.md`).
 - Light only. The AYSG brand has no dark mode, and an automatic dark theme made the page look black on dark-mode Macs.
 - Real AYSG photos of smiling volunteers and beneficiaries, not stock imagery.
-- No carousels (every hero figure is visible at once), no decorative noise, no animation library, fast on mobile.
+- No carousels (every hero figure is visible at once), no decorative noise, no animation library, fast on mobile. The one looping element is the CSR logo strip, which pauses on hover and becomes a static grid under reduced motion.
+- Below the hero, each section gets one motion idea of its own rather than the same fade everywhere. Everything is readable with no JS and under reduced motion.
 
 ## What was deliberately left out
 

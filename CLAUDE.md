@@ -62,6 +62,7 @@ Shapes: pill buttons (`border-radius: 999px`), cards 14–22px radius, photos 18
 - Hero: four acts in order (`#what`, `#work`, `#impact`, `#trust`). On screens ≥1000px wide and ≥600px tall with motion allowed, `html.pin` pins them in one stage. JS clones six `.slot[data-tile]` photos into `.hero-tiles` and moves them between each act's measured slot positions as you scroll. Otherwise the acts stack normally, so all content works without JS. To move a photo, move its slot in the markup; the JS re-measures. The eight figures live as plain text in `[data-count]`: they count up once, then settle on that exact text.
 - Donate form: frequency toggle (`[data-freq]`), amount chips (`[data-amt]`), button label updates. **Payment is not connected**: submit shows a draft message. The real donation flow is https://donate.arham.org/ (Razorpay; asks PAN + address for 80G).
 - Volunteer FAQ accordion (`[data-faq]` / `[data-faqbody]`): one open at a time.
+- Below the hero, `html.rvon` (JS on, motion allowed) enables `.rv` reveals and `[data-cnt]` count-ups, which settle on the exact text. Initiatives opener: `.ixo` photos close toward each other through the `--c`, `--k` and `--e` values (they default to fully open without JS). Initiatives mosaic: `.bento` tiles, sized with `.big`, `.t` (tall) and `.w` (wide). A `.bt-ph` span is a photo placeholder: replace it with an `<img>` when a real photo arrives. Campaigns: in `html.pin` mode `.camp-pin` pins `.camp-stage`, scroll moves `.camp-track` sideways and fills the `[data-step]` bar (clicking a step jumps to that card); otherwise the `.camp-card`s simply stack. `[data-ink]` quotes ink in word by word. `[data-open]` is the closing photo. The CSR logo strip is a CSS marquee with a duplicated `aria-hidden` set.
 
 ## Open to-dos (dashed `.todo` boxes on the page)
 
@@ -72,7 +73,8 @@ Shapes: pill buttons (`border-radius: 999px`), cards 14–22px radius, photos 18
 5. Trust block in About: legal entity, registration/12A/80G numbers, named coordinators, annual report.
 6. Wire the donate form to donate.arham.org (or link to it) and the "Join" buttons to arham.org/join-us (already linked).
 7. Remove the green "Draft for review" banner at the top once 1–5 are done.
-8. Optional: commit images to the repo instead of downloading from arham.org at build time, so the site doesn't depend on arham.org.
+8. Real photos for the Arham Dialysis Sahay and AlwaysCare tiles in Initiatives (dashed `[PHOTO: ...]` placeholders).
+9. Optional: commit images to the repo instead of downloading from arham.org at build time, so the site doesn't depend on arham.org.
 
 ## Related links
 

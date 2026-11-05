@@ -196,8 +196,292 @@ html.pin .hero-rail{display:flex;position:absolute;left:50%;bottom:14px;transfor
 .hero-rail a:hover{color:#b8264f}
 .hero-rail a[aria-current="true"]{background:#b8264f;color:#fff}
 html.measuring .act{transform:none!important}
+
+/* Sections below the hero. One signature moment per section; all content works with no JS. */
+.wrap{max-width:1440px}
+.sec{padding-top:clamp(72px,9vw,128px);padding-bottom:clamp(72px,9vw,128px);scroll-margin-top:0}
+.sec.cream{background:#fff6e8}.sec.white{background:#fff}.sec.berry{background:#b8264f;color:#fff}
+.sec-head{display:flex;flex-direction:column;gap:12px;margin-bottom:clamp(36px,4.5vw,64px)}
+.sec-head.row{flex-direction:row;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.sec-head.row>div{display:flex;flex-direction:column;gap:12px}
+.sec-h{font-size:clamp(2.2rem,4.5vw,4.4rem);max-width:22ch;text-wrap:balance}
+.sec-h em{color:#b8264f}
+.sec.berry .sec-h,.sec.berry .sec-h em{color:#fff}
+.sec.berry .eyebrow{color:#ffd9a8}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-w{background:#fff;border-color:#fff;color:#b8264f}
+.btn-w:hover{background:#fff6e8;border-color:#fff6e8;color:#8f1d3d}
+.btn{transition:background-color .18s ease,border-color .18s ease,color .18s ease,transform .18s cubic-bezier(.16,1,.3,1)}
+.btn:active{transform:scale(.97)}
+i[aria-hidden]{font-style:normal;display:inline-block;transition:transform .22s cubic-bezier(.16,1,.3,1)}
+
+html.rvon .rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+html.rvon .rv.in{opacity:1;transform:none}
+html.rvon .rv[data-rv="clip"]{opacity:1;transform:none;clip-path:inset(14% 0 0 0 round 18px);transition:clip-path 1s cubic-bezier(.16,1,.3,1)}
+html.rvon .rv[data-rv="clip"].in{clip-path:inset(0 0 0 0 round 18px)}
+html.rvon .rv[data-rv="clip"] img{transform:scale(1.1);transition:transform 1.2s cubic-bezier(.16,1,.3,1),opacity .45s ease}
+html.rvon .rv[data-rv="clip"].in img{transform:none}
+
+.help{background:#17151a;color:#fff;scroll-margin-top:84px}
+.help-grid{display:grid}
+.help-link+.help-link{border-top:1px solid rgba(255,255,255,.16)}
+.help-link{display:flex;flex-direction:column;gap:6px;padding:clamp(28px,3.4vw,48px) 0;color:#fff;text-decoration:none}
+.help-link:hover{color:#fff}
+.help-t{font-size:clamp(1.6rem,2.6vw,2.5rem)}
+.help-d{color:rgba(255,255,255,.82)}
+.help-a{margin-top:8px;font-weight:600}
+
+.ixo{position:relative;--ph:clamp(240px,52vh,560px);margin-bottom:clamp(48px,6vw,88px)}
+.ixo .eyebrow{margin:0 0 14px}
+.ixo-h{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0 0 clamp(16px,2vw,28px);font-size:clamp(1.9rem,5.2vw,5.2rem);line-height:1.02;letter-spacing:-.03em}
+.ixo-em{position:absolute;left:50%;bottom:calc(var(--ph)/2);z-index:1;white-space:nowrap;padding:.14em .62em .2em;border-radius:999px;background:#fff6e8;color:#b8264f;font-size:clamp(1.8rem,4.2vw,4.2rem);line-height:1;box-shadow:0 18px 50px rgba(60,30,10,.22);opacity:var(--e,1);transform:translate(-50%,50%) scale(calc(.9 + .1*var(--e,1)))}
+.ixo-ph{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;height:var(--ph)}
+.ixo-ph figure{margin:0;overflow:hidden;background:#f3e3cf}
+.ixo-ph .l{clip-path:inset(0 var(--c,0%) 0 0 round 18px)}
+.ixo-ph .r{clip-path:inset(0 0 0 var(--c,0%) round 18px)}
+.ixo-ph img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(calc(1.12 - .12*var(--k,1)))}
+.bento{list-style:none;margin:0;padding:0;display:grid;gap:14px;grid-template-columns:minmax(0,1fr);grid-auto-rows:minmax(280px,auto)}
+.bt{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;height:100%;box-sizing:border-box;overflow:hidden;padding:22px;border-radius:18px;background:#17151a;color:#fff;text-decoration:none}
+.bt:hover{color:#fff}
+.bt:focus-visible{outline:3px solid #17151a;outline-offset:3px}
+.bt img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover}
+.bt::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(23,21,26,.92) 0%,rgba(23,21,26,.78) 30%,rgba(23,21,26,0) 66%)}
+.bt-num{font-size:clamp(2.4rem,3.6vw,3.4rem);line-height:1;letter-spacing:-.03em;font-variant-numeric:lining-nums}
+.bt-name{font-size:clamp(1.3rem,1.7vw,1.6rem);line-height:1.15;margin-top:4px}
+.bt-desc{font-size:15px;line-height:1.4;color:#fff}
+.bt:has(.bt-ph){background:#f3e3cf}
+.bt-ph{position:absolute;inset:12px;z-index:-2;box-sizing:border-box;padding:12px 14px;border:1.5px dashed #4d7a08;border-radius:10px;font-size:12px;font-weight:600;letter-spacing:.06em;color:#17151a}
+.bt-go{margin-top:10px;font-weight:600;font-size:15px;color:#ffd9a8}
+.big .bt{padding:clamp(24px,2.6vw,36px)}
+.big .bt-num{font-size:clamp(4rem,7.6vw,7.6rem)}
+.big .bt-name{font-size:clamp(1.8rem,2.8vw,2.7rem)}
+.big .bt-desc{font-size:17px}
+html.rvon .bento li:nth-child(4n+2){transition-delay:.07s}
+html.rvon .bento li:nth-child(4n+3){transition-delay:.14s}
+html.rvon .bento li:nth-child(4n){transition-delay:.21s}
+@media (min-width:700px){.bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:clamp(270px,38vw,340px)}.bento .big{grid-column:span 2;grid-row:span 2}}
+@media (min-width:1000px){.bento{grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(270px,23vw,340px)}.bento .t{grid-row:span 2}.bento .w{grid-column:span 2}}
+
+.stories{display:grid;gap:36px}
+.story{display:flex;flex-direction:column;gap:10px;color:#17151a;text-decoration:none;min-width:0}
+.story:hover{color:#17151a}
+.story-img{display:block;overflow:hidden;border-radius:18px;aspect-ratio:16/9;background:#f3e3cf}
+.story-img img{display:block;width:100%;height:100%;object-fit:cover}
+.story-date{font-size:14px;color:#5b5862}
+.story-t{font-size:clamp(1.4rem,2vw,1.9rem);line-height:1.15}
+.story.lead .story-t{font-size:clamp(1.7rem,3vw,2.9rem)}
+.story-more{color:#b8264f;font-weight:600;font-size:15px}
+.story-body{display:flex;flex-direction:column;gap:8px;min-width:0}
+
+.camp-head{display:flex;flex-direction:column;gap:20px;margin-bottom:clamp(32px,4vw,56px)}
+.camp-title{display:flex;flex-direction:column;gap:10px}
+.camp-h{font-size:clamp(3rem,7vw,7rem);line-height:1;letter-spacing:-.03em;color:#fff}
+.camp-h em{color:#ffd9a8}
+.camp-side{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.camp-side p{margin:0;font-size:17px;color:#fff;max-width:44ch}
+.camp-track{display:flex;flex-direction:column;gap:20px;padding:0 24px;max-width:1440px;margin:0 auto;box-sizing:border-box}
+.camp-card:nth-child(even) .sc-in{background:linear-gradient(135deg,#fff6e8,#f9d2a2)}
+.camp-rail{display:none}
+html.pin #campaigns{padding-top:0}
+html.pin .camp-pin{height:calc(var(--vh) + 210vh)}
+html.pin .camp-stage{position:sticky;top:0;height:var(--vh);display:flex;flex-direction:column;overflow:hidden;box-sizing:border-box;padding:104px 0 20px}
+html.pin .camp-head{width:100%;flex-direction:row;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:clamp(20px,3vh,36px)}
+html.pin .camp-side{flex:0 0 min(400px,34%)}
+html.pin .camp-view{flex:1;min-height:0;display:flex;align-items:center}
+html.pin .camp-track{flex-direction:row;width:max-content;max-width:none;height:100%;max-height:660px;margin:0;gap:24px;padding:0 max(24px,calc((var(--camp-w,100vw) - 1440px)/2 + 24px));will-change:transform}
+html.pin .camp-card{flex:none;width:min(74vw,1020px);height:100%}
+html.pin .sc-in{grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-rows:minmax(0,1fr);height:100%;box-shadow:0 24px 60px rgba(70,8,28,.3)}
+html.pin .sc-in>img{height:100%;width:112%;max-width:none;margin-left:-6%;will-change:transform}
+html.pin .sc-body{padding:clamp(20px,3.4vw,56px);position:relative;background:#fff6e8}
+html.pin .camp-card:nth-child(even) .sc-body{background:linear-gradient(135deg,#fff6e8,#f9d2a2)}
+html.pin .sc-num{font-size:clamp(3rem,6vw,5.4rem)}
+html.pin .camp-rail{display:grid;width:100%;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:clamp(14px,2vh,24px)}
+.camp-step{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:8px;min-height:44px;padding-top:6px;font-size:14px;font-weight:600;color:rgba(255,255,255,.82);transition:color .2s ease}
+.camp-step:focus-visible{outline:3px solid #fff;outline-offset:3px;border-radius:4px}
+.camp-step.on{color:#fff}
+.camp-step i{display:block;height:3px;border-radius:999px;background:rgba(255,255,255,.28);overflow:hidden;position:relative}
+.camp-step i::after{content:"";position:absolute;inset:0;background:#ffd9a8;border-radius:999px;transform:scaleX(var(--f,0));transform-origin:0 50%}
+@media (hover:hover){.camp-step:hover{color:#fff}}
+@media (max-height:700px){html.pin .camp-side p{display:none}html.pin .camp-side{flex:none}html.pin .camp-h{font-size:clamp(2.6rem,5vw,4rem)}html.pin .sc-body p{display:none}}
+.sc-in{display:grid;background:#fff6e8;color:#17151a;border-radius:22px;overflow:hidden;box-shadow:0 14px 44px rgba(70,8,28,.24)}
+.sc-in>img{display:block;width:100%;height:clamp(240px,34vw,300px);object-fit:cover}
+.sc-body{display:flex;flex-direction:column;justify-content:center;gap:10px;padding:clamp(24px,4vw,64px)}
+.sc-num{font-size:clamp(3rem,8vw,7.6rem);line-height:.98;letter-spacing:-.04em;color:#b8264f;font-variant-numeric:lining-nums}
+.sc-unit{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#3d6206;font-weight:600}
+.sc-t{font-size:clamp(1.5rem,2.6vw,2.4rem)}
+.sc-body p{margin:0;color:#4a4750;font-size:17px;max-width:44ch}
+.feat{position:relative;margin-top:clamp(40px,5vw,72px);background:#fff;color:#17151a;border-radius:22px;padding:clamp(24px,3vw,44px);display:grid;gap:28px;align-items:center}
+.feat-main,.feat-side{display:flex;flex-direction:column;gap:12px;min-width:0}
+.sec.berry .feat .eyebrow{color:#3d6206}
+.feat-t{font-size:clamp(1.7rem,2.6vw,2.4rem)}
+.feat-d{margin:0;color:#4a4750}
+.feat-bar{margin-top:6px}
+.feat-lab{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px;font-weight:600}
+.feat-lab span:last-child{color:#5b5862}
+.feat-track{height:10px;border-radius:999px;background:#f3e3cf;margin-top:8px;border:1.5px dashed #4d7a08}
+
+.give{display:grid;gap:40px;align-items:start}
+.give-copy{display:flex;flex-direction:column;gap:16px;min-width:0}
+.give-copy>p{margin:0;max-width:56ch}
+.give-form{background:#fff;border:1px solid #efe3d3;border-radius:22px;padding:clamp(22px,3vw,40px);display:flex;flex-direction:column;gap:20px;box-shadow:0 24px 70px rgba(80,40,20,.10);min-width:0}
+.give-show{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid #efe3d3}
+.give-amt{font-size:clamp(3.2rem,6.4vw,5.6rem);line-height:1;letter-spacing:-.04em;color:#b8264f;font-variant-numeric:lining-nums tabular-nums}
+.give-per{font-size:17px;color:#4a4750}
+.f-lab{margin:0 0 8px;font-weight:600;font-size:14px}
+.segs{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));background:#fff6e8;border-radius:999px;padding:4px}
+.segs::before{content:"";position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);background:#fff;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:transform .24s cubic-bezier(.16,1,.3,1)}
+.segs[data-on="once"]::before{transform:translateX(100%)}
+.seg{position:relative;background:transparent;color:#4a4750;transition:color .18s ease}
+.seg[aria-pressed="true"]{color:#b8264f}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{transition:background-color .18s ease,border-color .18s ease,color .18s ease,transform .18s cubic-bezier(.16,1,.3,1)}
+.chip:active{transform:scale(.96)}
+.chip[aria-pressed="true"]{background:#d23563;border-color:#d23563;color:#fff}
+.give-btn{justify-content:center;font-size:16px;width:100%}
+.give-note{margin:0;font-size:14px;color:#5b5862}
+.give-msg{margin:0;font-size:14px;font-weight:600;color:#3d6206}
+
+.vol{display:grid;gap:40px;align-items:start}
+.vol-photo{overflow:hidden;border-radius:18px;aspect-ratio:4/5;background:#f3e3cf}
+.vol-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.vol-main{display:flex;flex-direction:column;gap:18px;min-width:0}
+.vol-d{margin:0;color:#4a4750;font-size:18px}
+.month{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) auto;gap:10px;align-items:stretch}
+.week{display:flex;flex-direction:column;gap:8px;background:#fff6e8;border-radius:14px;padding:14px;min-width:0}
+.week span{font-size:13px;color:#4a4750}
+.week i{display:block;height:8px;border-radius:999px;background:#f9d2a2;transform-origin:0 50%}
+.week b{font-size:22px;line-height:1;font-weight:400}
+.week.total{background:#b8264f;color:#fff;justify-content:space-between;padding-right:20px}
+.week.total span{color:#fff}
+.week.total b{font-size:clamp(1.7rem,3vw,2.6rem)}
+html.rvon .month.rv{opacity:1;transform:none}
+html.rvon .month .week i{transform:scaleX(0);transition:transform .7s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--i)*160ms + 120ms)}
+html.rvon .month.in .week i{transform:none}
+html.rvon .month .total{opacity:0;transform:translateY(10px);transition:opacity .5s ease .85s,transform .5s cubic-bezier(.16,1,.3,1) .85s}
+html.rvon .month.in .total{opacity:1;transform:none}
+.faqs{display:flex;flex-direction:column;border-top:1px solid #efe3d3}
+.faq{border-bottom:1px solid #efe3d3}
+.faq button{all:unset;box-sizing:border-box;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;min-height:56px;font-weight:600;font-size:18px;color:#17151a;transition:color .18s ease}
+.faq button:focus-visible{outline:3px solid #17151a;outline-offset:2px}
+.faq.open button{color:#b8264f}
+.faq button i{position:relative;width:16px;height:16px;flex:none}
+.faq button i::before,.faq button i::after{content:"";position:absolute;left:0;right:0;top:7px;height:2px;background:currentColor;transition:transform .24s cubic-bezier(.16,1,.3,1)}
+.faq button i::after{transform:rotate(90deg)}
+.faq.open button i::after{transform:rotate(0)}
+.faq-b{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows .28s cubic-bezier(.16,1,.3,1),visibility .28s}
+.faq.open .faq-b{grid-template-rows:1fr;visibility:visible}
+.faq-b p{overflow:hidden;min-height:0;margin:0;color:#4a4750;font-size:16px}
+.faq.open .faq-b p{padding-bottom:16px}
+
+.drives{border-top:1px solid #e9dccb}
+.drive{display:grid;gap:14px;padding:24px 0;border-bottom:1px solid #e9dccb;align-items:center}
+.drive-date{justify-self:start;background:#b8264f;color:#fff;border-radius:12px;padding:10px 14px;font-weight:700;font-size:14px;white-space:nowrap}
+.drive-main{min-width:0}
+.drive-tag{margin:0 0 4px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#3d6206;font-weight:600}
+.drive-t{font-size:clamp(1.5rem,2.4vw,2.3rem)}
+.drive-d{margin:6px 0 0;color:#4a4750;font-size:15px}
+.drive-where{margin:0;font-size:14px}
+.drive-img{overflow:hidden;border-radius:14px;aspect-ratio:16/10;background:#f3e3cf}
+.drive-img img{display:block;width:100%;height:100%;object-fit:cover}
+.drive .btn{justify-self:start}
+
+.voice{margin:0 0 clamp(48px,7vw,96px);max-width:1100px;display:flex;flex-direction:column;gap:22px}
+.voice:last-child{margin-bottom:0}
+.voice.alt{margin-left:auto}
+.voice blockquote{margin:0;font-size:clamp(2.2rem,5.2vw,5rem);line-height:1.1;letter-spacing:-.025em;color:#17151a}
+.voice figcaption{display:flex;align-items:center;gap:14px;font-size:15px;color:#4a4750}
+.voice figcaption img{width:56px;height:56px;border-radius:50%;object-fit:cover}
+.voice figcaption b{color:#17151a}
+[data-ink] span{transition:opacity .2s linear}
+
+.about{display:grid;gap:36px}
+.about-main{display:flex;flex-direction:column;gap:16px;min-width:0}
+.about-main>p:last-child{margin:0;max-width:56ch}
+.about-q{font-style:italic;font-size:clamp(1.4rem,2vw,1.9rem);line-height:1.3}
+.about-img img{display:block;width:100%;height:auto}
+.grow{margin:0;display:grid;gap:24px;grid-column:1/-1;border-top:1px solid #e9dccb;padding-top:28px}
+.grow>div{display:flex;flex-direction:column;gap:6px}
+.grow dt{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#3d6206;font-weight:600}
+.grow dd{margin:0;font-size:clamp(3.4rem,8vw,7.4rem);line-height:1;letter-spacing:-.04em;color:#b8264f;font-variant-numeric:lining-nums tabular-nums}
+.grow span{color:#4a4750}
+.about-todo{grid-column:1/-1}
+
+.csr-head{display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center}
+.csr-h{font-size:clamp(1.7rem,3vw,2.8rem);display:flex;flex-direction:column;align-items:center;gap:8px}
+.csr-n{font-size:clamp(4rem,12vw,11.5rem);line-height:.95;letter-spacing:-.045em;color:#b8264f;font-variant-numeric:lining-nums tabular-nums}
+.csr-d{margin:0;color:#4a4750}
+.marquee{margin-top:clamp(36px,4vw,56px);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.mq-track{display:flex;width:max-content}
+.mq-set{list-style:none;display:flex;gap:14px;margin:0;padding:0 7px}
+.mq-set li{display:flex;align-items:center;justify-content:center;width:210px;height:104px;box-sizing:border-box;padding:16px 22px;background:#fff;border:1px solid #efe3d3;border-radius:14px;flex:none}
+.mq-set img{max-width:100%;max-height:100%;object-fit:contain}
+@media (prefers-reduced-motion:no-preference){.mq-track{animation:mq 46s linear infinite}.marquee:hover .mq-track,.marquee:focus-within .mq-track{animation-play-state:paused}}
+@media (prefers-reduced-motion:reduce){.mq-track{width:auto}.mq-set{flex-wrap:wrap;justify-content:center}.mq-copy{display:none}}
+@keyframes mq{to{transform:translateX(-50%)}}
+.csr-cta{display:flex;justify-content:center;margin-top:32px}
+
+.closing{background:radial-gradient(70% 80% at 0% 100%,rgba(249,210,162,.7) 0%,rgba(249,210,162,0) 65%),linear-gradient(135deg,#fff6e8 0%,#f9d2a2 100%);padding-top:clamp(72px,9vw,128px)}
+.closing-head{display:grid;gap:28px;align-items:end}
+.closing-h{font-size:clamp(2.5rem,6.2vw,6.4rem);line-height:1.02;letter-spacing:-.03em;text-wrap:balance}
+.closing-h em{color:#b8264f}
+.closing-side{display:flex;flex-direction:column;gap:18px}
+.closing-side p{margin:0;font-size:18px;color:#4a4750}
+.closing-photo{margin-top:clamp(40px,5vw,72px);height:clamp(280px,62vw,86vh);clip-path:inset(var(--o,0%) var(--s,0%) 0 var(--s,0%) round 24px 24px 0 0);will-change:clip-path}
+.closing-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 58%}
+
+.foot{background:#fff6e8;border-top:1px solid #efe3d3;padding-top:clamp(48px,6vw,88px);padding-bottom:36px;font-size:15px;color:#4a4750;scroll-margin-top:84px}
+.foot-big{font-size:clamp(2.6rem,7.6vw,7.8rem);line-height:1;letter-spacing:-.035em;color:#17151a;text-wrap:balance}
+.foot-big em{color:#b8264f}
+.foot-grid{display:grid;gap:24px;margin-top:clamp(36px,4vw,64px);padding-top:28px;border-top:1px solid #e9dccb}
+.foot-grid b{color:#17151a;display:block;margin-bottom:4px}
+.foot-copy{margin-top:28px;font-size:13px;color:#5b5862}
+
+@media (hover:hover){
+  .help-link:hover i,.story:hover .story-more i,.bt:hover .bt-go i{transform:translateX(6px)}
+  .bt img{transition:transform .7s cubic-bezier(.16,1,.3,1)}
+  .bt:hover img{transform:scale(1.05)}
+  .story .story-img img{transition:transform .7s cubic-bezier(.16,1,.3,1)}
+  .story:hover .story-img img{transform:scale(1.04)!important}
+  .story:hover .story-t{color:#b8264f}
+  .drive-img img{transition:transform .6s cubic-bezier(.16,1,.3,1)}
+  .drive:hover .drive-img img{transform:scale(1.06)}
+  .faq button:hover{color:#b8264f}
+}
+
+@media (min-width:760px){
+  .help-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .help-link+.help-link{border-top:0;border-left:1px solid rgba(255,255,255,.16);padding-left:clamp(24px,3vw,48px)}
+  .camp-card{height:clamp(360px,62vh,600px)}
+  .sc-in{grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-rows:minmax(0,1fr);height:100%}
+  .sc-in>img{height:100%}
+  .feat{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+  .grow{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .foot-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .drive{grid-template-columns:auto minmax(0,1fr) auto}
+  .drive-where{grid-column:2}
+  .drive-img{display:none}
+  .drive .btn{grid-column:3;grid-row:1/span 2}
+}
+@media (min-width:1000px){
+  .stories{grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-rows:auto auto;gap:44px 48px}
+  .story.lead{grid-row:1/span 2}
+  .story.side{flex-direction:row;gap:22px;align-items:center}
+  .story.side .story-img{width:44%;flex:none;aspect-ratio:1/1}
+  .story.side .story-img img{object-position:100% 50%}
+  .give{grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:clamp(40px,6vw,96px)}
+  .give-copy{position:sticky;top:104px}
+  .vol{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,6vw,96px)}
+  .vol-photo{position:sticky;top:104px;aspect-ratio:auto;height:min(calc(var(--vh) - 136px),760px)}
+  .drive{grid-template-columns:96px minmax(0,1.5fr) minmax(0,.9fr) 230px auto;gap:32px;padding:24px 16px;border-radius:14px;transition:background-color .25s ease}
+  .drive:hover{background:#fff}
+  .drive-where{grid-column:auto}
+  .drive-img{display:block}
+  .drive .btn{grid-column:auto;grid-row:auto}
+  .about{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px clamp(40px,6vw,96px);align-items:center}
+  .closing-head{grid-template-columns:minmax(0,2.1fr) minmax(0,1fr);gap:48px}
+}
 </style>
-<script>(function(d){d.classList.add('js');try{if(matchMedia('(min-width:1000px) and (min-height:600px) and (prefers-reduced-motion:no-preference)').matches)d.classList.add('pin')}catch(e){}})(document.documentElement)</script>
+<script>(function(d){d.classList.add('js');try{if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion:reduce)').matches)d.classList.add('rvon')}catch(e){}try{if(matchMedia('(min-width:1000px) and (min-height:600px) and (prefers-reduced-motion:no-preference)').matches)d.classList.add('pin')}catch(e){}})(document.documentElement)</script>
 </head>
 <body>
 <div style="background: #ffffff; min-height: 100%">
@@ -343,214 +627,138 @@ html.measuring .act{transform:none!important}
 </div>
 </div>
 
-<div id="help" style="background: #17151a; color: #ffffff; padding-top: 26px; padding-bottom: 26px">
-<div class="wrap g-help">
-<p style="margin: 0; min-width: 0"><span class="serif" style="display: block; font-size: 22px">Injured or sick animal?</span>AlwaysCare, our free animal ambulance service, can help. <a href="https://alwayscare.org/" style="color: #ffffff; font-weight: 600">Call or WhatsApp AlwaysCare →</a></p>
-<p style="margin: 0; min-width: 0"><span class="serif" style="display: block; font-size: 22px">Need medical, dialysis or food support?</span>Find out how to ask for help. <a href="#contact" style="color: #ffffff; font-weight: 600">Contact our head office →</a></p>
+<div id="help" class="help">
+<div class="wrap help-grid">
+<a class="help-link" href="https://alwayscare.org/"><span class="serif help-t">Injured or sick animal?</span><span class="help-d">AlwaysCare, our free animal ambulance service, can help.</span><span class="help-a">Call or WhatsApp AlwaysCare <i aria-hidden="true">→</i></span></a>
+<a class="help-link" href="#contact"><span class="serif help-t">Need medical, dialysis or food support?</span><span class="help-d">Find out how to ask for help.</span><span class="help-a">Contact our head office <i aria-hidden="true">→</i></span></a>
 </div>
 </div>
 
-<div id="initiatives" style="background: #fff6e8; padding-top: 96px; padding-bottom: 96px">
+<div id="initiatives" class="sec cream">
 <div class="wrap">
-<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; margin-bottom: 44px">
+<div class="ixo">
 <p class="eyebrow">Key initiatives</p>
-<h2 class="serif" style="font-size: clamp(2rem, 4.4vw, 3.4rem); max-width: 20ch">Human welfare and animal welfare, <em style="color: #b8264f">side by side</em></h2>
+<h2 class="serif ixo-h"><span>Human welfare and</span> <span>animal welfare,</span> <em class="ixo-em">side by side</em></h2>
+<div class="ixo-ph">
+<figure class="l"><img src="/images/paathshala.jpg" alt="Children at Arham Paathshala holding up their drawings" loading="lazy" decoding="async" style="object-position: 50% 52%"></figure>
+<figure class="r"><img src="/images/anukampa.jpg" alt="AYSG volunteers tending to an injured cow under Arham Anukampa" loading="lazy" decoding="async" style="object-position: 55% 72%"></figure>
 </div>
-<div class="g-4">
-
-<article style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
-<div class="ph" style="aspect-ratio: 4 / 5"><span class="badge">2,450+</span><img src="/images/anukampa.jpg" alt="Volunteers caring for animals under Arham Anukampa" loading="lazy" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0"></div>
-<p style="margin: 0; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #4d7a08; font-weight: 600">Animal welfare</p>
-<h3 class="serif" style="font-size: 26px">Arham Anukampa</h3>
-<p style="margin: 0; color: #4a4750; font-size: 15px">Our jeevdaya work, giving animals shelter, food, water and healthcare.</p>
-</article>
-
-<article style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
-<div class="ph" style="aspect-ratio: 4 / 5"><span class="badge">18,600+</span><img src="/images/aahar.jpg" alt="Children holding plates of food at an Arham Aahar drive" loading="lazy" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0"></div>
-<p style="margin: 0; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #4d7a08; font-weight: 600">Food support</p>
-<h3 class="serif" style="font-size: 26px">Arham Aahar</h3>
-<p style="margin: 0; color: #4a4750; font-size: 15px">Hot meals for people who lack a daily one.</p>
-</article>
-
-<article style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
-<div class="ph" style="aspect-ratio: 4 / 5"><span class="badge">3,275+</span><img src="/images/medical.jpg" alt="AYSG volunteers visiting patients under Arham Medical Sahay" loading="lazy" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0"></div>
-<p style="margin: 0; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #4d7a08; font-weight: 600">Medical support</p>
-<h3 class="serif" style="font-size: 26px">Arham Medical Sahay</h3>
-<p style="margin: 0; color: #4a4750; font-size: 15px">Checkups, consultations and treatment support through the year.</p>
-</article>
-
-<article style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
-<div class="ph" style="aspect-ratio: 4 / 5"><span class="badge">9,840+</span><img src="/images/education.jpg" alt="Students receiving support from Arham Education Sahay" loading="lazy" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0"></div>
-<p style="margin: 0; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #4d7a08; font-weight: 600">Education</p>
-<h3 class="serif" style="font-size: 26px">Arham Education Sahay</h3>
-<p style="margin: 0; color: #4a4750; font-size: 15px">Education support for students from rural and tribal communities.</p>
-</article>
-
 </div>
-<div class="g-more" style="margin-top: 36px">
-<div style="background: #ffffff; border: 1px solid #b8264f; border-radius: 14px; padding: 18px; min-width: 0">
-<div class="serif" style="font-size: 20px">AlwaysCare</div>
-<p style="margin: 0; font-size: 15px; color: #4a4750">Free animal ambulances for injured and sick animals.</p>
-<a href="https://alwayscare.org/" style="font-weight: 600; font-size: 15px">Visit AlwaysCare →</a>
-</div>
-
-<div style="background: #ffffff; border: 1px solid #efe3d3; border-radius: 14px; padding: 18px; min-width: 0">
-<div class="serif" style="font-size: 28px; color: #b8264f; line-height: 1">1,120+</div>
-<div class="serif" style="font-size: 20px; margin-top: 6px">Arham Dialysis Sahay</div>
-<p style="margin: 0; font-size: 15px; color: #4a4750">Easier access to dialysis and less of its financial burden.</p>
-</div>
-
-<div style="background: #ffffff; border: 1px solid #efe3d3; border-radius: 14px; padding: 18px; min-width: 0">
-<div class="serif" style="font-size: 28px; color: #b8264f; line-height: 1">4,785+</div>
-<div class="serif" style="font-size: 20px; margin-top: 6px">Arham Annadan Sahay</div>
-<p style="margin: 0; font-size: 15px; color: #4a4750">Monthly groceries for families in need.</p>
-</div>
-
-<div style="background: #ffffff; border: 1px solid #efe3d3; border-radius: 14px; padding: 18px; min-width: 0">
-<div class="serif" style="font-size: 28px; color: #b8264f; line-height: 1">6,530+</div>
-<div class="serif" style="font-size: 20px; margin-top: 6px">Arham Paathshala</div>
-<p style="margin: 0; font-size: 15px; color: #4a4750">Skills, studies and moral values for children from difficult backgrounds.</p>
-</div>
-
-<div style="background: #ffffff; border: 1px solid #efe3d3; border-radius: 14px; padding: 18px; min-width: 0">
-<div class="serif" style="font-size: 28px; color: #b8264f; line-height: 1">760+</div>
-<div class="serif" style="font-size: 20px; margin-top: 6px">Arham Ashram Sahay</div>
-<p style="margin: 0; font-size: 15px; color: #4a4750">Basic facilities for old-age homes.</p>
-</div>
-
-<div style="background: #ffffff; border: 1px solid #efe3d3; border-radius: 14px; padding: 18px; min-width: 0">
-<div class="serif" style="font-size: 28px; color: #b8264f; line-height: 1">12,360+</div>
-<div class="serif" style="font-size: 20px; margin-top: 6px">Pasti Collection</div>
-<p style="margin: 0; font-size: 15px; color: #4a4750">Your old newspapers, turned into funds for children&#x27;s education.</p>
-</div>
-
-</div>
+<ul class="bento">
+<li class="rv big"><a class="bt" href="https://arham.org/initiatives/arham-aahar"><img src="/images/aahar.jpg" alt="Children holding plates of food at an Arham Aahar drive" loading="lazy" decoding="async" style="object-position: 48% 50%"><span class="serif bt-num">18,600+</span><span class="serif bt-name">Arham Aahar</span><span class="bt-desc">Hot meals for people who lack a daily one.</span></a></li>
+<li class="rv t"><a class="bt" href="https://arham.org/initiatives/arham-medical-sahay"><img src="/images/medical.jpg" alt="AYSG volunteers visiting patients under Arham Medical Sahay" loading="lazy" decoding="async" style="object-position: 38% 50%"><span class="serif bt-num">3,275+</span><span class="serif bt-name">Arham Medical Sahay</span><span class="bt-desc">Checkups, consultations and treatment support through the year.</span></a></li>
+<li class="rv"><a class="bt" href="https://arham.org/initiatives/arham-dialysis-sahay"><span class="bt-ph">[PHOTO: ARHAM DIALYSIS SAHAY]</span><span class="serif bt-num">1,120+</span><span class="serif bt-name">Arham Dialysis Sahay</span><span class="bt-desc">Easier access to dialysis and less of its financial burden.</span></a></li>
+<li class="rv"><a class="bt" href="https://alwayscare.org/"><span class="bt-ph">[PHOTO: ALWAYSCARE AMBULANCE]</span><span class="serif bt-name">AlwaysCare</span><span class="bt-desc">Free animal ambulances for injured and sick animals.</span><span class="bt-go">Visit <i aria-hidden="true">→</i></span></a></li>
+<li class="rv t"><a class="bt" href="https://arham.org/initiatives/pasti-collection"><img src="/images/pasti.jpg" alt="Volunteers beside a large pile of collected newspapers" loading="lazy" decoding="async" style="object-position: 78% 50%"><span class="serif bt-num">12,360+</span><span class="serif bt-name">Pasti Collection</span><span class="bt-desc">Your old newspapers, turned into funds for children&#x27;s education.</span></a></li>
+<li class="rv w"><a class="bt" href="https://arham.org/initiatives/arham-anukampa"><img src="/images/anukampa.jpg" alt="Volunteers caring for animals under Arham Anukampa" loading="lazy" decoding="async" style="object-position: 50% 60%"><span class="serif bt-num">2,450+</span><span class="serif bt-name">Arham Anukampa</span><span class="bt-desc">Our jeevdaya work, giving animals shelter, food, water and healthcare.</span></a></li>
+<li class="rv "><a class="bt" href="https://arham.org/initiatives/arham-annadan-sahay"><img src="/images/annadan.jpg" alt="A volunteer handing a grocery kit to a woman at an Arham distribution" loading="lazy" decoding="async" style="object-position: 40% 40%"><span class="serif bt-num">4,785+</span><span class="serif bt-name">Arham Annadan Sahay</span><span class="bt-desc">Monthly groceries for families in need.</span></a></li>
+<li class="rv "><a class="bt" href="https://arham.org/initiatives/arham-education-sahay"><img src="/images/education.jpg" alt="Students receiving support from Arham Education Sahay" loading="lazy" decoding="async" style="object-position: 36% 40%"><span class="serif bt-num">9,840+</span><span class="serif bt-name">Arham Education Sahay</span><span class="bt-desc">Education support for students from rural and tribal communities.</span></a></li>
+<li class="rv "><a class="bt" href="https://arham.org/initiatives/arham-paathshala"><img src="/images/paathshala.jpg" alt="Children at Arham Paathshala holding up their drawings" loading="lazy" decoding="async" style="object-position: 40% 60%"><span class="serif bt-num">6,530+</span><span class="serif bt-name">Arham Paathshala</span><span class="bt-desc">Skills, studies and moral values for children from difficult backgrounds.</span></a></li>
+<li class="rv "><a class="bt" href="https://arham.org/initiatives/arham-asram-sahay"><img src="/images/ashram.jpg" alt="AYSG volunteers with an Arham Yuva Seva Group banner and supplies" loading="lazy" decoding="async" style="object-position: 38% 100%"><span class="serif bt-num">760+</span><span class="serif bt-name">Arham Ashram Sahay</span><span class="bt-desc">Basic facilities for old-age homes.</span></a></li>
+</ul>
 </div>
 </div>
 
-<div id="stories" style="background: #ffffff; padding-top: 96px; padding-bottom: 96px">
+<div id="stories" class="sec white">
 <div class="wrap">
-<div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px">
+<div class="sec-head row rv">
+<div>
 <p class="eyebrow">Latest stories</p>
-<h2 class="serif" style="font-size: clamp(2rem, 4.4vw, 3.4rem)">Arhamites <em style="color: #b8264f">in action</em></h2>
+<h2 class="serif sec-h">Arhamites <em>in action</em></h2>
 </div>
-<div class="g-3">
-
-<a href="#stories" style="display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: #17151a; min-width: 0">
-<div class="ph" style="aspect-ratio: 16 / 10"><img src="/images/story-chennai.jpg" alt="Students supported by AYSG Chennai through Education Sahay" loading="lazy" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0"></div>
-<span style="font-size: 14px; color: #5b5862">20 June 2026</span>
-<h3 class="serif" style="font-size: 24px">Chennai: Education Sahay is supporting 65 students</h3>
-<span style="color: #b8264f; font-weight: 600; font-size: 15px">Read story →</span>
+<a class="btn" href="https://arham.org/blog">All stories</a>
+</div>
+<div class="stories">
+<a class="story lead" href="https://arham.org/blog/1500-homes-uplifted-aysgs-cupboard-distribution-initiative-bringing-dignity-to-families">
+<span class="story-img rv" data-rv="clip"><img src="/images/story-cupboard.jpg" alt="Families receiving cupboards from AYSG volunteers" loading="lazy" decoding="async"></span>
+<span class="story-date">22 June 2026</span>
+<span class="serif story-t">Families receive a cupboard to store what they own</span>
+<span class="story-more">Read story <i aria-hidden="true">→</i></span>
 </a>
-
-<a href="#stories" style="display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: #17151a; min-width: 0">
-<div class="ph" style="aspect-ratio: 16 / 10"><img src="/images/story-jamnagar.jpg" alt="Children at the free dental checkup camp in Jamnagar" loading="lazy" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0"></div>
-<span style="font-size: 14px; color: #5b5862">20 June 2026</span>
-<h3 class="serif" style="font-size: 24px">Jamnagar: a free dental checkup camp for 600+ children</h3>
-<span style="color: #b8264f; font-weight: 600; font-size: 15px">Read story →</span>
+<a class="story side" href="https://arham.org/blog/aysg-chennai-supports-education-of-65-students-through-education-sahay-initiative">
+<span class="story-img rv" data-rv="clip"><img src="/images/story-chennai.jpg" alt="Students supported by AYSG Chennai through Education Sahay" loading="lazy" decoding="async"></span>
+<span class="story-body"><span class="story-date">20 June 2026</span><span class="serif story-t">Chennai: Education Sahay is supporting 65 students</span><span class="story-more">Read story <i aria-hidden="true">→</i></span></span>
 </a>
-
-<a href="#stories" style="display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: #17151a; min-width: 0">
-<div class="ph" style="aspect-ratio: 16 / 10"><img src="/images/story-cupboard.jpg" alt="Families receiving cupboards from AYSG volunteers" loading="lazy" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0"></div>
-<span style="font-size: 14px; color: #5b5862">22 June 2026</span>
-<h3 class="serif" style="font-size: 24px">Families receive a cupboard to store what they own</h3>
-<span style="color: #b8264f; font-weight: 600; font-size: 15px">Read story →</span>
+<a class="story side" href="https://arham.org/blog/aysg-jamnagar-free-dental-checkup-camp-600-children">
+<span class="story-img rv" data-rv="clip"><img src="/images/story-jamnagar.jpg" alt="Children at the free dental checkup camp in Jamnagar" loading="lazy" decoding="async"></span>
+<span class="story-body"><span class="story-date">20 June 2026</span><span class="serif story-t">Jamnagar: a free dental checkup camp for 600+ children</span><span class="story-more">Read story <i aria-hidden="true">→</i></span></span>
 </a>
-
 </div>
 </div>
 </div>
 
-<div id="campaigns" style="background: #b8264f; color: #ffffff; padding-top: 88px; padding-bottom: 88px">
+<div id="campaigns" class="sec berry">
+<div class="camp-pin">
+<div class="camp-stage">
+<div class="wrap camp-head">
+<div class="camp-title">
+<p class="eyebrow">Campaigns</p>
+<h2 class="serif camp-h">One step <em>at a time</em></h2>
+</div>
+<div class="camp-side">
+<p>Seasonal drives that anyone can join: with a donation, an old newspaper, or a Sunday afternoon.</p>
+<a class="btn btn-w" href="#give">Back a campaign</a>
+</div>
+</div>
+<div class="camp-view">
+<div class="camp-track">
+<article class="camp-card"><div class="sc-in"><img src="/images/volunteer-chaas.jpg" alt="A man drinking buttermilk at an AYSG chaas distribution" loading="lazy" decoding="async" style="object-position: 70% 45%"><div class="sc-body"><div class="serif sc-num">12,01,407+</div><div class="sc-unit">Glasses</div><h3 class="serif sc-t">Buttermilk (Chaas) Distribution</h3><p>Cool relief in the summer heat, served across India.</p></div></div></article>
+<article class="camp-card"><div class="sc-in"><img src="/images/hero-pasti.jpg" alt="AYSG volunteers at a Maha Pasti Abhiyaan newspaper collection drive" loading="lazy" decoding="async" style="object-position: 50% 48%"><div class="sc-body"><div class="serif sc-num">1,76,482+</div><div class="sc-unit">Kg collected</div><h3 class="serif sc-t">Maha Pasti Abhiyaan</h3><p>Old newspapers turned into funds for education.</p></div></div></article>
+<article class="camp-card"><div class="sc-in"><img src="/images/cupboard.jpg" alt="A family with a cupboard from the AYSG Cupboard Distribution campaign" loading="lazy" decoding="async" style="object-position: 86% 50%"><div class="sc-body"><div class="serif sc-num">1,000+</div><div class="sc-unit">Homes</div><h3 class="serif sc-t">Cupboard Distribution</h3><p>A cupboard gives a family comfort, pride and a place for what they own.</p></div></div></article>
+<article class="camp-card"><div class="sc-in"><img src="/images/fullscape.jpg" alt="Two children holding Full Scape Buddy notebooks" loading="lazy" decoding="async" style="object-position: 50% 30%"><div class="sc-body"><div class="serif sc-num">1,00,000+</div><div class="sc-unit">Notebooks</div><h3 class="serif sc-t">Full Scape Buddy</h3><p>Notebooks for students who are eager to learn.</p></div></div></article>
+</div>
+</div>
+<div class="wrap camp-rail">
+<button type="button" class="camp-step on" data-step="0"><i></i><span>Buttermilk (Chaas)</span></button>
+<button type="button" class="camp-step" data-step="1"><i></i><span>Maha Pasti Abhiyaan</span></button>
+<button type="button" class="camp-step" data-step="2"><i></i><span>Cupboard Distribution</span></button>
+<button type="button" class="camp-step" data-step="3"><i></i><span>Full Scape Buddy</span></button>
+</div>
+</div>
+</div>
 <div class="wrap">
-<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 40px">
-<div style="display: flex; flex-direction: column; gap: 12px; max-width: 640px">
-<p class="eyebrow" style="color: #ffd9a8">Campaigns</p>
-<h2 class="serif" style="font-size: clamp(2rem, 4.4vw, 3.4rem); color: #ffffff">One step at a time</h2>
-<p style="margin: 0; color: rgba(255,255,255,0.86)">Seasonal drives that anyone can join: with a donation, an old newspaper, or a Sunday afternoon.</p>
-</div>
-<a class="btn" href="#give" style="background: #ffffff; border-color: #ffffff; color: #b8264f">Back a campaign</a>
-</div>
-<div class="g-4">
-
-<article style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 10px; min-width: 0">
-<div class="serif" style="font-size: 36px; line-height: 1; color: #ffffff">12,01,407+</div>
-<div style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #ffd9a8; font-weight: 600">Glasses</div>
-<h3 class="serif" style="font-size: 22px; color: #ffffff">Buttermilk (Chaas) Distribution</h3>
-<p style="margin: 0; font-size: 15px; color: rgba(255,255,255,0.86)">Cool relief in the summer heat, served across India.</p>
-</article>
-
-<article style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 10px; min-width: 0">
-<div class="serif" style="font-size: 36px; line-height: 1; color: #ffffff">1,76,482+</div>
-<div style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #ffd9a8; font-weight: 600">Kg collected</div>
-<h3 class="serif" style="font-size: 22px; color: #ffffff">Maha Pasti Abhiyaan</h3>
-<p style="margin: 0; font-size: 15px; color: rgba(255,255,255,0.86)">Old newspapers turned into funds for education.</p>
-</article>
-
-<article style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 10px; min-width: 0">
-<div class="serif" style="font-size: 36px; line-height: 1; color: #ffffff">1,000+</div>
-<div style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #ffd9a8; font-weight: 600">Homes</div>
-<h3 class="serif" style="font-size: 22px; color: #ffffff">Cupboard Distribution</h3>
-<p style="margin: 0; font-size: 15px; color: rgba(255,255,255,0.86)">A cupboard gives a family comfort, pride and a place for what they own.</p>
-</article>
-
-<article style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 10px; min-width: 0">
-<div class="serif" style="font-size: 36px; line-height: 1; color: #ffffff">1,00,000+</div>
-<div style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #ffd9a8; font-weight: 600">Notebooks</div>
-<h3 class="serif" style="font-size: 22px; color: #ffffff">Full Scape Buddy</h3>
-<p style="margin: 0; font-size: 15px; color: rgba(255,255,255,0.86)">Notebooks for students who are eager to learn.</p>
-</article>
-
-</div>
-<div style="margin-top: 28px; background: #ffffff; color: #17151a; border-radius: 22px; padding: 26px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 28px; align-items: center" class="g-feat">
-<div style="display: flex; flex-direction: column; gap: 10px; min-width: 0">
+<div class="feat rv">
+<div class="feat-main">
 <p class="eyebrow">Featured campaign</p>
-<h3 class="serif" style="font-size: 30px">Maha Pasti Abhiyaan</h3>
-<p style="margin: 0; color: #4a4750">Give your old newspapers and magazines. We turn them into funds to educate children.</p>
-<div style="margin-top: 6px">
-<div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: 600"><span>176,482+ kg collected</span><span style="color: #5b5862">Goal: [GOAL KG]</span></div>
-<div style="height: 10px; border-radius: 999px; background: #f3e3cf; margin-top: 8px; border: 1.5px dashed #4d7a08"></div>
+<h3 class="serif feat-t">Maha Pasti Abhiyaan</h3>
+<p class="feat-d">Give your old newspapers and magazines. We turn them into funds to educate children.</p>
+<div class="feat-bar"><div class="feat-lab"><span>1,76,482+ kg collected</span><span>Goal: [GOAL KG]</span></div><div class="feat-track"></div></div>
 </div>
-</div>
-<div style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
+<div class="feat-side">
 <p class="todo"><b style="color: #17151a">Add this campaign's goal</b> to fill the progress bar. Leave the bar out if AYSG can't keep it current.</p>
-<div style="display: flex; gap: 10px; flex-wrap: wrap"><a class="btn btn-p" href="#give">Donate to this campaign</a><a class="btn" href="#contact">Schedule a pasti pickup</a></div>
+<div class="btns"><a class="btn btn-p" href="#give">Donate to this campaign</a><a class="btn" href="#contact">Schedule a pasti pickup</a></div>
 </div>
 </div>
 </div>
 </div>
 
-<div id="give" style="background: #fff6e8; padding-top: 96px; padding-bottom: 96px">
-<div class="wrap g-2" style="align-items: start">
-<div style="display: flex; flex-direction: column; gap: 16px; min-width: 0">
+<div id="give" class="sec cream">
+<div class="wrap give">
+<div class="give-copy">
 <p class="eyebrow">Donate</p>
-<h2 class="serif" style="font-size: clamp(2rem, 4.4vw, 3.4rem)">Give every month, <em style="color: #b8264f">or give once</em></h2>
-<p style="margin: 0">A Monthly SIP is a fixed amount you give every month to the initiative you choose.</p>
-<p style="margin: 0"><b>Giving for an occasion?</b> Mark a birthday, anniversary or Paryushan by sponsoring seva in your family's name. <a href="#contact">Talk to us →</a></p>
+<h2 class="serif sec-h">Give every month, <em>or give once</em></h2>
+<p>A Monthly SIP is a fixed amount you give every month to the initiative you choose.</p>
+<p><b>Giving for an occasion?</b> Mark a birthday, anniversary or Paryushan by sponsoring seva in your family's name. <a href="#contact">Talk to us →</a></p>
 <p class="todo"><b style="color: #17151a">Tie each amount to an outcome</b> using AYSG's own costs, e.g. "₹1,000 = [X] meals".</p>
-<p style="margin: 0"><b>Tax benefit:</b> donations to AYSG are eligible for tax benefits under 80G. Add your PAN and full address to receive your receipt.</p>
+<p><b>Tax benefit:</b> donations to AYSG are eligible for tax benefits under 80G. Add your PAN and full address to receive your receipt.</p>
 <p class="todo"><b style="color: #17151a">Show the 80G registration number</b> next to this line so donors can check it.</p>
 </div>
-<form id="donateForm" novalidate style="background: #ffffff; border: 1px solid #efe3d3; border-radius: 22px; padding: 28px; display: flex; flex-direction: column; gap: 18px; box-shadow: 0 10px 30px rgba(80,40,20,0.06); min-width: 0">
+<form id="donateForm" class="give-form rv" novalidate>
+<div class="give-show" aria-hidden="true"><span class="serif give-amt" id="giveAmt">₹1,000</span><span class="give-per" id="givePer">every month</span></div>
 <div>
-<p style="margin: 0 0 8px; font-weight: 600; font-size: 14px">How would you like to give?</p>
-<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); background: #fff6e8; border-radius: 999px; padding: 4px">
-<button type="button" class="seg" data-freq="monthly" style="background: #ffffff; color: #b8264f; box-shadow: 0 2px 8px rgba(0,0,0,0.08)">Monthly SIP</button>
-<button type="button" class="seg" data-freq="once" style="background: transparent; color: #4a4750">One time</button>
+<p class="f-lab">How would you like to give?</p>
+<div class="segs" data-on="monthly">
+<button type="button" class="seg" data-freq="monthly" aria-pressed="true">Monthly SIP</button>
+<button type="button" class="seg" data-freq="once" aria-pressed="false">One time</button>
 </div>
 </div>
 <div>
-<p style="margin: 0 0 8px; font-weight: 600; font-size: 14px">Amount</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px">
-
-<button type="button" class="chip" data-amt="500" style="">₹500</button>
-
-<button type="button" class="chip" data-amt="1000" style="background: #d23563; border-color: #d23563; color: #ffffff">₹1,000</button>
-
-<button type="button" class="chip" data-amt="2500" style="">₹2,500</button>
-
-<button type="button" class="chip" data-amt="5000" style="">₹5,000</button>
-
+<p class="f-lab">Amount</p>
+<div class="chips">
+<button type="button" class="chip" data-amt="500" aria-pressed="false">₹500</button>
+<button type="button" class="chip" data-amt="1000" aria-pressed="true">₹1,000</button>
+<button type="button" class="chip" data-amt="2500" aria-pressed="false">₹2,500</button>
+<button type="button" class="chip" data-amt="5000" aria-pressed="false">₹5,000</button>
 </div>
 </div>
 <div>
@@ -560,192 +768,170 @@ html.measuring .act{transform:none!important}
 </select>
 </div>
 <div class="g-fields">
-<div style="min-width: 0"><label for="fname">Full name</label><input type="text" id="fname"></div>
-<div style="min-width: 0"><label for="mobile">Mobile number</label><input type="tel" id="mobile" placeholder="10-digit number"></div>
-<div style="min-width: 0"><label for="email">Email</label><input type="email" id="email"></div>
-<div style="min-width: 0"><label for="pan">PAN (for your 80G receipt)</label><input type="text" id="pan" placeholder="ABCDE1234F"></div>
+<div style="min-width: 0"><label for="fname">Full name</label><input type="text" id="fname" autocomplete="name"></div>
+<div style="min-width: 0"><label for="mobile">Mobile number</label><input type="tel" id="mobile" placeholder="10-digit number" autocomplete="tel"></div>
+<div style="min-width: 0"><label for="email">Email</label><input type="email" id="email" autocomplete="email"></div>
+<div style="min-width: 0"><label for="pan">PAN (for your 80G receipt)</label><input type="text" id="pan" placeholder="ABCDE1234F" autocomplete="off"></div>
 </div>
-<button type="submit" id="giveBtn" class="btn btn-p" style="justify-content: center; font-size: 16px">Start my Monthly SIP of ₹1,000</button>
-<p style="margin: 0; font-size: 14px; color: #5b5862">You'll review your gift before you pay.</p>
-<p id="formMsg" hidden style="margin: 0; font-size: 14px; font-weight: 600; color: #4d7a08">This is a design draft, so payment is not connected yet.</p>
+<button type="submit" id="giveBtn" class="btn btn-p give-btn">Start my Monthly SIP of ₹1,000</button>
+<p class="give-note">You'll review your gift before you pay.</p>
+<p id="formMsg" class="give-msg" hidden>This is a design draft, so payment is not connected yet.</p>
 </form>
 </div>
 </div>
 
-<div id="volunteer" style="background: #ffffff; padding-top: 96px; padding-bottom: 96px">
-<div class="wrap g-2" style="align-items: start">
-<div style="display: flex; flex-direction: column; gap: 18px; min-width: 0">
-<div class="ph" style="aspect-ratio: 4 / 5"><img src="/images/volunteer-chaas.jpg" alt="AYSG volunteers at a buttermilk distribution" loading="lazy" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0"></div>
-</div>
-<div style="display: flex; flex-direction: column; gap: 16px; min-width: 0">
+<div id="volunteer" class="sec white">
+<div class="wrap vol">
+<div class="vol-photo rv" data-rv="clip"><img data-drift src="/images/pasti.jpg" alt="Young AYSG volunteers with folded hands beside collected newspapers" loading="lazy" decoding="async" style="object-position: 100% 50%"></div>
+<div class="vol-main">
 <p class="eyebrow">Volunteer</p>
-<h2 class="serif" style="font-size: clamp(2rem, 4.4vw, 3.4rem)">Give 8 hours a month, <em style="color: #b8264f">usually on a Sunday</em></h2>
-<p style="margin: 0; color: #4a4750">Every member gives about two hours a week. Here is what that looks like.</p>
-<div style="display: flex; flex-direction: column; gap: 10px">
-
-<div style="border: 1px solid #b8264f; border-radius: 14px; padding: 6px 18px; background: #ffffff">
-<button type="button" data-faq="0" aria-expanded="true" style="all: unset; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; width: 100%; min-height: 44px; font-weight: 600; font-size: 17px; color: #b8264f"><span>What will I do?</span><span aria-hidden="true" style="font-size: 20px">−</span></button>
-<p data-faqbody="0"  style="margin: 4px 0 6px; color: #4a4750; font-size: 15px">Serve meals, collect newspapers, visit patients, care for animals, and rescue birds injured during kite-flying season.</p>
+<h2 class="serif sec-h">Give 8 hours a month, <em>usually on a Sunday</em></h2>
+<p class="vol-d">Every member gives about two hours a week. Here is what that looks like.</p>
+<div class="month rv" role="img" aria-label="Two hours on each of four Sundays adds up to eight hours a month">
+<div class="week" style="--i: 0"><span>Sunday</span><i></i><b class="serif">2 hrs</b></div>
+<div class="week" style="--i: 1"><span>Sunday</span><i></i><b class="serif">2 hrs</b></div>
+<div class="week" style="--i: 2"><span>Sunday</span><i></i><b class="serif">2 hrs</b></div>
+<div class="week" style="--i: 3"><span>Sunday</span><i></i><b class="serif">2 hrs</b></div>
+<div class="week total"><span>A month</span><b class="serif">8 hrs</b></div>
 </div>
-
-<div style="border: 1px solid #efe3d3; border-radius: 14px; padding: 6px 18px; background: #ffffff">
-<button type="button" data-faq="1" aria-expanded="false" style="all: unset; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; width: 100%; min-height: 44px; font-weight: 600; font-size: 17px; color: #17151a"><span>How much time does it take?</span><span aria-hidden="true" style="font-size: 20px">+</span></button>
-<p data-faqbody="1" hidden style="margin: 4px 0 6px; color: #4a4750; font-size: 15px">Eight hours a month. Most members give two hours every week, usually on a Sunday.</p>
+<div class="faqs">
+<div class="faq open"><button type="button" data-faq="0" aria-expanded="true" aria-controls="faq-0"><span>What will I do?</span><i aria-hidden="true"></i></button><div class="faq-b" id="faq-0" data-faqbody="0"><p>Serve meals, collect newspapers, visit patients, care for animals, and rescue birds injured during kite-flying season.</p></div></div>
+<div class="faq"><button type="button" data-faq="1" aria-expanded="false" aria-controls="faq-1"><span>How much time does it take?</span><i aria-hidden="true"></i></button><div class="faq-b" id="faq-1" data-faqbody="1"><p>Eight hours a month. Most members give two hours every week, usually on a Sunday.</p></div></div>
+<div class="faq"><button type="button" data-faq="2" aria-expanded="false" aria-controls="faq-2"><span>What do I get?</span><i aria-hidden="true"></i></button><div class="faq-b" id="faq-2" data-faqbody="2"><p>A team in your city, and a certificate when you complete your volunteering.</p></div></div>
+<div class="faq"><button type="button" data-faq="3" aria-expanded="false" aria-controls="faq-3"><span>Who can join?</span><i aria-hidden="true"></i></button><div class="faq-b" id="faq-3" data-faqbody="3"><p>Anyone with a passion to help. You do not need to be Jain. No AYSG centre near you? Get in touch and the team will guide you.</p></div></div>
 </div>
-
-<div style="border: 1px solid #efe3d3; border-radius: 14px; padding: 6px 18px; background: #ffffff">
-<button type="button" data-faq="2" aria-expanded="false" style="all: unset; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; width: 100%; min-height: 44px; font-weight: 600; font-size: 17px; color: #17151a"><span>What do I get?</span><span aria-hidden="true" style="font-size: 20px">+</span></button>
-<p data-faqbody="2" hidden style="margin: 4px 0 6px; color: #4a4750; font-size: 15px">A team in your city, and a certificate when you complete your volunteering.</p>
-</div>
-
-<div style="border: 1px solid #efe3d3; border-radius: 14px; padding: 6px 18px; background: #ffffff">
-<button type="button" data-faq="3" aria-expanded="false" style="all: unset; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; width: 100%; min-height: 44px; font-weight: 600; font-size: 17px; color: #17151a"><span>Who can join?</span><span aria-hidden="true" style="font-size: 20px">+</span></button>
-<p data-faqbody="3" hidden style="margin: 4px 0 6px; color: #4a4750; font-size: 15px">Anyone with a passion to help. You do not need to be Jain. No AYSG centre near you? Get in touch and the team will guide you.</p>
-</div>
-
-</div>
-<div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px">
-<a class="btn btn-p" href="https://arham.org/join-us">Join AYSG</a>
-<a class="btn" href="#drives">See upcoming drives</a>
-</div>
+<div class="btns"><a class="btn btn-p" href="https://arham.org/join-us">Join AYSG</a><a class="btn" href="#drives">See upcoming drives</a></div>
 </div>
 </div>
 </div>
 
-<div id="drives" style="background: #fff6e8; padding-top: 96px; padding-bottom: 96px">
+<div id="drives" class="sec cream">
 <div class="wrap">
-<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 36px">
-<div style="display: flex; flex-direction: column; gap: 12px">
+<div class="sec-head row rv">
+<div>
 <p class="eyebrow">Upcoming drives</p>
-<h2 class="serif" style="font-size: clamp(2rem, 4.4vw, 3.4rem)">Find a drive <em style="color: #b8264f">near you</em></h2>
+<h2 class="serif sec-h">Find a drive <em>near you</em></h2>
 </div>
 <a class="btn" href="https://arham.org/join-us">Find your nearest centre</a>
 </div>
-<div class="g-3">
-
-<article style="background: #ffffff; border: 1px solid #efe3d3; border-radius: 18px; padding: 14px; display: flex; flex-direction: column; gap: 14px; min-width: 0">
-<div class="ph" style="aspect-ratio: 16 / 10"><span style="position: absolute; top: 12px; left: 12px; background: #b8264f; color: #ffffff; border-radius: 12px; padding: 8px 12px; text-align: center; line-height: 1.1; font-weight: 700; font-size: 14px">[DATE]</span><img src="/images/annadan.jpg" alt="Volunteers distributing groceries and meals" loading="lazy" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0"></div>
-<div style="display: flex; flex-direction: column; gap: 8px; padding: 0 6px 6px">
-<p style="margin: 0; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #4d7a08; font-weight: 600">Arham Aahar</p>
-<h3 class="serif" style="font-size: 24px">Sunday meal drive</h3>
-<p style="margin: 0; color: #4a4750; font-size: 15px">Cook, pack and serve hot meals with your local team.</p>
-<p style="margin: 0; font-size: 14px"><b>Where:</b> [CENTRE, CITY] · <b>Time:</b> [TIME]</p>
-<a class="btn btn-p" href="https://arham.org/join-us" style="align-self: flex-start; margin-top: 4px">Join this drive</a>
-</div>
+<div class="drives">
+<article class="drive rv">
+<span class="drive-date">[DATE]</span>
+<div class="drive-main"><p class="drive-tag">Arham Aahar</p><h3 class="serif drive-t">Sunday meal drive</h3><p class="drive-d">Cook, pack and serve hot meals with your local team.</p></div>
+<p class="drive-where"><b>Where:</b> [CENTRE, CITY]<br><b>Time:</b> [TIME]</p>
+<div class="drive-img"><img src="/images/annadan.jpg" alt="Volunteers distributing groceries and meals" loading="lazy" decoding="async"></div>
+<a class="btn btn-p" href="https://arham.org/join-us">Join this drive</a>
 </article>
-
-<article style="background: #ffffff; border: 1px solid #efe3d3; border-radius: 18px; padding: 14px; display: flex; flex-direction: column; gap: 14px; min-width: 0">
-<div class="ph" style="aspect-ratio: 16 / 10"><span style="position: absolute; top: 12px; left: 12px; background: #b8264f; color: #ffffff; border-radius: 12px; padding: 8px 12px; text-align: center; line-height: 1.1; font-weight: 700; font-size: 14px">[DATE]</span><img src="/images/pasti.jpg" alt="Volunteers collecting old newspapers" loading="lazy" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0"></div>
-<div style="display: flex; flex-direction: column; gap: 8px; padding: 0 6px 6px">
-<p style="margin: 0; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #4d7a08; font-weight: 600">Maha Pasti Abhiyaan</p>
-<h3 class="serif" style="font-size: 24px">Newspaper collection</h3>
-<p style="margin: 0; color: #4a4750; font-size: 15px">Collect old newspapers from homes and societies in your area.</p>
-<p style="margin: 0; font-size: 14px"><b>Where:</b> [CENTRE, CITY] · <b>Time:</b> [TIME]</p>
-<a class="btn btn-p" href="https://arham.org/join-us" style="align-self: flex-start; margin-top: 4px">Join this drive</a>
-</div>
+<article class="drive rv">
+<span class="drive-date">[DATE]</span>
+<div class="drive-main"><p class="drive-tag">Maha Pasti Abhiyaan</p><h3 class="serif drive-t">Newspaper collection</h3><p class="drive-d">Collect old newspapers from homes and societies in your area.</p></div>
+<p class="drive-where"><b>Where:</b> [CENTRE, CITY]<br><b>Time:</b> [TIME]</p>
+<div class="drive-img"><img src="/images/pasti.jpg" alt="Volunteers collecting old newspapers" loading="lazy" decoding="async"></div>
+<a class="btn btn-p" href="https://arham.org/join-us">Join this drive</a>
 </article>
-
-<article style="background: #ffffff; border: 1px solid #efe3d3; border-radius: 18px; padding: 14px; display: flex; flex-direction: column; gap: 14px; min-width: 0">
-<div class="ph" style="aspect-ratio: 16 / 10"><span style="position: absolute; top: 12px; left: 12px; background: #b8264f; color: #ffffff; border-radius: 12px; padding: 8px 12px; text-align: center; line-height: 1.1; font-weight: 700; font-size: 14px">[DATE]</span><img src="/images/medical.jpg" alt="A free health checkup camp run by AYSG" loading="lazy" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0"></div>
-<div style="display: flex; flex-direction: column; gap: 8px; padding: 0 6px 6px">
-<p style="margin: 0; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #4d7a08; font-weight: 600">Arham Medical Sahay</p>
-<h3 class="serif" style="font-size: 24px">Health checkup camp</h3>
-<p style="margin: 0; color: #4a4750; font-size: 15px">Help run registrations and queues at a free checkup camp.</p>
-<p style="margin: 0; font-size: 14px"><b>Where:</b> [CENTRE, CITY] · <b>Time:</b> [TIME]</p>
-<a class="btn btn-p" href="https://arham.org/join-us" style="align-self: flex-start; margin-top: 4px">Join this drive</a>
-</div>
+<article class="drive rv">
+<span class="drive-date">[DATE]</span>
+<div class="drive-main"><p class="drive-tag">Arham Medical Sahay</p><h3 class="serif drive-t">Health checkup camp</h3><p class="drive-d">Help run registrations and queues at a free checkup camp.</p></div>
+<p class="drive-where"><b>Where:</b> [CENTRE, CITY]<br><b>Time:</b> [TIME]</p>
+<div class="drive-img"><img src="/images/medical.jpg" alt="A free health checkup camp run by AYSG" loading="lazy" decoding="async"></div>
+<a class="btn btn-p" href="https://arham.org/join-us">Join this drive</a>
 </article>
-
 </div>
 <p class="todo" style="margin-top: 24px"><b style="color: #17151a">Connect these cards to the real drive schedule</b> for each centre. arham.org doesn't list upcoming dates yet.</p>
 </div>
 </div>
 
-<div id="voices" style="background: #ffffff; padding-top: 96px; padding-bottom: 96px">
+<div id="voices" class="sec white">
 <div class="wrap">
-<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; margin-bottom: 40px">
+<div class="sec-head rv">
 <p class="eyebrow">From our volunteers</p>
-<h2 class="serif" style="font-size: clamp(2rem, 4.4vw, 3.4rem)">Why Arhamites <em style="color: #b8264f">keep coming back</em></h2>
+<h2 class="serif sec-h">Why Arhamites <em>keep coming back</em></h2>
 </div>
-<div class="g-help" style="max-width: 1000px; margin: 0 auto">
-<figure style="margin: 0; background: #fff6e8; border-radius: 22px; padding: 30px; display: flex; flex-direction: column; gap: 18px">
-<blockquote class="serif" style="margin: 0; font-size: 26px; line-height: 1.3">“My experience in AYSG has been nothing short of life changing.”</blockquote>
-<figcaption style="font-size: 15px; color: #4a4750; display: flex; align-items: center; gap: 12px"><img src="/images/testimonial-khushi.png" alt="" width="48" height="48" loading="lazy" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover"><span><b style="color: #17151a">Khushi Doshi</b><br>Team Chennai</span></figcaption>
+<figure class="voice">
+<blockquote class="serif" data-ink>“My experience in AYSG has been nothing short of life changing.”</blockquote>
+<figcaption><img src="/images/testimonial-khushi.png" alt="" width="56" height="56" loading="lazy"><span><b>Khushi Doshi</b><br>Team Chennai</span></figcaption>
 </figure>
-<figure style="margin: 0; background: #fff6e8; border-radius: 22px; padding: 30px; display: flex; flex-direction: column; gap: 18px">
-<blockquote class="serif" style="margin: 0; font-size: 26px; line-height: 1.3">“It's about imparting the nature of caregiving and kindness.”</blockquote>
-<figcaption style="font-size: 15px; color: #4a4750; display: flex; align-items: center; gap: 12px"><img src="/images/testimonial-moksh.png" alt="" width="48" height="48" loading="lazy" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover"><span><b style="color: #17151a">Moksh Shah</b><br>Team Ghatkopar</span></figcaption>
+<figure class="voice alt">
+<blockquote class="serif" data-ink>“It's about imparting the nature of caregiving and kindness.”</blockquote>
+<figcaption><img src="/images/testimonial-moksh.png" alt="" width="56" height="56" loading="lazy"><span><b>Moksh Shah</b><br>Team Ghatkopar</span></figcaption>
 </figure>
-</div>
 </div>
 </div>
 
-<div id="about" style="background: #fff6e8; padding-top: 96px; padding-bottom: 96px">
-<div class="wrap g-2">
-<div style="display: flex; flex-direction: column; gap: 16px; min-width: 0">
+<div id="about" class="sec cream">
+<div class="wrap about">
+<div class="about-main">
 <p class="eyebrow">About AYSG</p>
-<h2 class="serif" style="font-size: clamp(2rem, 4.4vw, 3.4rem)">Giving has always been an act of <em style="color: #b8264f">self-discovery</em></h2>
-<p class="serif" style="font-style: italic; font-size: 24px; line-height: 1.35">Arham is an inner call to give up ego, overcome anger, practise self-control and live with passion.</p>
-<p style="margin: 0">AYSG started in Mulund, Mumbai, with 50 people. Today, inspired by Rashtrasant Param Gurudev Shree Namramuni Maharaj Saheb, 1,200+ members across around 60 centres bring that call into everyday seva.</p>
-<p class="todo"><b style="color: #17151a">Trust block:</b> legal entity name, registration and 12A/80G numbers, named coordinators, and the latest annual report.</p>
+<h2 class="serif sec-h">Giving has always been an act of <em>self-discovery</em></h2>
+<p class="serif about-q">Arham is an inner call to give up ego, overcome anger, practise self-control and live with passion.</p>
+<p>AYSG started in Mulund, Mumbai, with 50 people. Today, inspired by Rashtrasant Param Gurudev Shree Namramuni Maharaj Saheb, 1,200+ members across around 60 centres bring that call into everyday seva.</p>
 </div>
-<div class="ph" style="aspect-ratio: 7 / 3"><img src="/images/about.png" alt="Arham Yuva Seva Group volunteers" loading="lazy" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0"></div>
+<div class="about-img rv" data-rv="clip"><img src="/images/about.png" alt="Arham Yuva Seva Group volunteers" loading="lazy" decoding="async"></div>
+<dl class="grow">
+<div><dt>Where it started</dt><dd class="serif" data-cnt>50</dd><span>people in Mulund, Mumbai</span></div>
+<div><dt>Today</dt><dd class="serif" data-cnt>1,200+</dd><span>members</span></div>
+<div><dt>Across</dt><dd class="serif" data-cnt>~60</dd><span>centres</span></div>
+</dl>
+<p class="todo about-todo"><b style="color: #17151a">Trust block:</b> legal entity name, registration and 12A/80G numbers, named coordinators, and the latest annual report.</p>
 </div>
 </div>
 
-<div id="csr" style="background: #ffffff; padding-top: 96px; padding-bottom: 96px">
-<div class="wrap" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px">
+<div id="csr" class="sec white">
+<div class="wrap csr-head">
 <p class="eyebrow">Our CSR partners</p>
-<h2 class="serif" style="font-size: clamp(2rem, 4.4vw, 3.4rem)"><span style="color: #b8264f">6,72,000+</span> lives impacted under CSR</h2>
-<p style="margin: 0; color: #4a4750">Our CSR partners fund food, medical and dialysis, education and winter-relief work.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 10px; margin-bottom: 10px">
-
-<span style="display: flex; align-items: center; justify-content: center; background: #ffffff; border: 1px solid #efe3d3; border-radius: 14px; padding: 10px 16px; height: 64px; box-sizing: border-box"><img src="/images/csr-reliance.jpg" alt="Reliance Foundation" loading="lazy" style="max-height: 44px; max-width: 130px; object-fit: contain"></span>
-
-<span style="display: flex; align-items: center; justify-content: center; background: #ffffff; border: 1px solid #efe3d3; border-radius: 14px; padding: 10px 16px; height: 64px; box-sizing: border-box"><img src="/images/csr-aveva.jpg" alt="Aveva" loading="lazy" style="max-height: 44px; max-width: 130px; object-fit: contain"></span>
-
-<span style="display: flex; align-items: center; justify-content: center; background: #ffffff; border: 1px solid #efe3d3; border-radius: 14px; padding: 10px 16px; height: 64px; box-sizing: border-box"><img src="/images/csr-man.jpg" alt="MAN" loading="lazy" style="max-height: 44px; max-width: 130px; object-fit: contain"></span>
-
-<span style="display: flex; align-items: center; justify-content: center; background: #ffffff; border: 1px solid #efe3d3; border-radius: 14px; padding: 10px 16px; height: 64px; box-sizing: border-box"><img src="/images/csr-sunpharma.jpg" alt="Sun Pharma" loading="lazy" style="max-height: 44px; max-width: 130px; object-fit: contain"></span>
-
-<span style="display: flex; align-items: center; justify-content: center; background: #ffffff; border: 1px solid #efe3d3; border-radius: 14px; padding: 10px 16px; height: 64px; box-sizing: border-box"><img src="/images/csr-schneider.jpg" alt="Schneider Electric" loading="lazy" style="max-height: 44px; max-width: 130px; object-fit: contain"></span>
-
-<span style="display: flex; align-items: center; justify-content: center; background: #ffffff; border: 1px solid #efe3d3; border-radius: 14px; padding: 10px 16px; height: 64px; box-sizing: border-box"><img src="/images/csr-anspl.jpg" alt="ANSPL" loading="lazy" style="max-height: 44px; max-width: 130px; object-fit: contain"></span>
-
-<span style="display: flex; align-items: center; justify-content: center; background: #ffffff; border: 1px solid #efe3d3; border-radius: 14px; padding: 10px 16px; height: 64px; box-sizing: border-box"><img src="/images/csr-sarjak.jpg" alt="Sarjak" loading="lazy" style="max-height: 44px; max-width: 130px; object-fit: contain"></span>
-
-<span style="display: flex; align-items: center; justify-content: center; background: #ffffff; border: 1px solid #efe3d3; border-radius: 14px; padding: 10px 16px; height: 64px; box-sizing: border-box"><img src="/images/csr-alfaccurate.jpg" alt="AlfAccurate Advisors" loading="lazy" style="max-height: 44px; max-width: 130px; object-fit: contain"></span>
-
-<span style="display: flex; align-items: center; justify-content: center; background: #ffffff; border: 1px solid #efe3d3; border-radius: 14px; padding: 10px 16px; height: 64px; box-sizing: border-box"><img src="/images/csr-bakertilly.jpg" alt="Baker Tilly DHC" loading="lazy" style="max-height: 44px; max-width: 130px; object-fit: contain"></span>
-
+<h2 class="serif csr-h"><span class="csr-n" data-cnt>6,72,000+</span> lives impacted under CSR</h2>
+<p class="csr-d">Our CSR partners fund food, medical and dialysis, education and winter-relief work.</p>
 </div>
-<a class="btn" href="#contact">Talk to our CSR team</a>
-</div>
-</div>
-
-<div style="background: #fff6e8; padding-top: 96px; padding-bottom: 96px">
-<div class="wrap g-2">
-<div class="ph" style="aspect-ratio: 16 / 9"><img src="/images/cupboard.jpg" alt="A family with a cupboard from the AYSG Cupboard Distribution campaign" loading="lazy" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0"></div>
-<div style="display: flex; flex-direction: column; gap: 22px; min-width: 0">
-<h2 class="serif" style="font-size: clamp(2rem, 4.6vw, 3.6rem)">We can't help everyone, but <em style="color: #b8264f">everyone can help someone</em></h2>
-<p style="margin: 0">Give monthly, give once, or give your time. Every Arhamite adds colour to someone's life.</p>
-<div style="display: flex; gap: 10px; flex-wrap: wrap">
-<a class="btn btn-p" href="#give">Donate</a>
-<a class="btn" href="#volunteer">Join Us</a>
-<a class="btn" href="#help">Get help</a>
+<div class="marquee">
+<div class="mq-track">
+<ul class="mq-set">
+<li><img src="/images/csr-reliance.jpg" alt="Reliance Foundation" loading="lazy"></li>
+<li><img src="/images/csr-aveva.jpg" alt="Aveva" loading="lazy"></li>
+<li><img src="/images/csr-man.jpg" alt="MAN" loading="lazy"></li>
+<li><img src="/images/csr-sunpharma.jpg" alt="Sun Pharma" loading="lazy"></li>
+<li><img src="/images/csr-schneider.jpg" alt="Schneider Electric" loading="lazy"></li>
+<li><img src="/images/csr-anspl.jpg" alt="ANSPL" loading="lazy"></li>
+<li><img src="/images/csr-sarjak.jpg" alt="Sarjak" loading="lazy"></li>
+<li><img src="/images/csr-alfaccurate.jpg" alt="AlfAccurate Advisors" loading="lazy"></li>
+<li><img src="/images/csr-bakertilly.jpg" alt="Baker Tilly DHC" loading="lazy"></li>
+</ul>
+<ul class="mq-set mq-copy" aria-hidden="true">
+<li><img src="/images/csr-reliance.jpg" alt="" loading="lazy"></li>
+<li><img src="/images/csr-aveva.jpg" alt="" loading="lazy"></li>
+<li><img src="/images/csr-man.jpg" alt="" loading="lazy"></li>
+<li><img src="/images/csr-sunpharma.jpg" alt="" loading="lazy"></li>
+<li><img src="/images/csr-schneider.jpg" alt="" loading="lazy"></li>
+<li><img src="/images/csr-anspl.jpg" alt="" loading="lazy"></li>
+<li><img src="/images/csr-sarjak.jpg" alt="" loading="lazy"></li>
+<li><img src="/images/csr-alfaccurate.jpg" alt="" loading="lazy"></li>
+<li><img src="/images/csr-bakertilly.jpg" alt="" loading="lazy"></li>
+</ul>
 </div>
 </div>
-</div>
+<div class="csr-cta"><a class="btn" href="#contact">Talk to our CSR team</a></div>
 </div>
 
-<footer id="contact" style="background: #fff6e8; border-top: 1px solid #efe3d3; padding-top: 44px; padding-bottom: 44px; font-size: 15px; color: #4a4750">
-<div class="wrap g-foot">
-<div class="serif" style="font-size: 26px; color: #17151a; line-height: 1.15">Spreading the <span style="color: #b8264f">Colours of Humanity</span></div>
-<div><b style="color: #17151a; display: block">Head office</b>Parasdham, Vallabh Baug Lane, Ghatkopar East, Mumbai 400077<br>10:00am – 6:00pm</div>
-<div><b style="color: #17151a; display: block">Contact</b>+91 7666708869<br>support@arham.org</div>
-<div><b style="color: #17151a; display: block">Follow</b><a href="https://www.instagram.com/aysgindia/">Instagram</a> · <a href="https://www.youtube.com/@ArhamYuvaSevaGroup/">YouTube</a> · <a href="https://www.facebook.com/AYSGIndia/">Facebook</a> · <a href="https://in.linkedin.com/company/arham-yuva-seva-group">LinkedIn</a></div>
+<div class="closing">
+<div class="wrap closing-head rv">
+<h2 class="serif closing-h">We can't help everyone, but <em>everyone can help someone</em></h2>
+<div class="closing-side">
+<p>Give monthly, give once, or give your time. Every Arhamite adds colour to someone's life.</p>
+<div class="btns"><a class="btn btn-p" href="#give">Donate</a><a class="btn" href="#volunteer">Join Us</a><a class="btn" href="#help">Get help</a></div>
 </div>
-<div class="wrap" style="margin-top: 28px; font-size: 13px; color: #5b5862">Copyright © 2026 Arham Yuva Seva Group. All Rights Reserved.</div>
+</div>
+<div class="closing-photo" data-open><img src="/images/paathshala.jpg" alt="Children at Arham Paathshala holding up their drawings" loading="lazy" decoding="async"></div>
+</div>
+
+<footer id="contact" class="foot">
+<div class="wrap">
+<div class="serif foot-big">Spreading the <em>Colours of Humanity</em></div>
+<div class="foot-grid">
+<div><b>Head office</b>Parasdham, Vallabh Baug Lane, Ghatkopar East, Mumbai 400077<br>10:00am – 6:00pm</div>
+<div><b>Contact</b><a href="tel:+917666708869">+91 7666708869</a><br><a href="mailto:support@arham.org">support@arham.org</a></div>
+<div><b>Follow</b><a href="https://www.instagram.com/aysgindia/">Instagram</a> · <a href="https://www.youtube.com/@ArhamYuvaSevaGroup/">YouTube</a> · <a href="https://www.facebook.com/AYSGIndia/">Facebook</a> · <a href="https://in.linkedin.com/company/arham-yuva-seva-group">LinkedIn</a></div>
+</div>
+<div class="foot-copy">Copyright © 2026 Arham Yuva Seva Group. All Rights Reserved.</div>
+</div>
 </footer>
 
 </div>
@@ -866,21 +1052,123 @@ html.measuring .act{transform:none!important}
     io.observe(document.querySelector('.figures'));
   }
 
-  var freq='monthly', amt=1000, btn=document.getElementById('giveBtn'), msg=document.getElementById('formMsg');
-  var on='background: #ffffff; color: #b8264f; box-shadow: 0 2px 8px rgba(0,0,0,0.08)', off='background: transparent; color: #4a4750';
+  /* Donate form */
+  var freq='monthly', amt=1000, shown=1000, btn=document.getElementById('giveBtn'), msg=document.getElementById('formMsg');
+  var amtEl=document.getElementById('giveAmt'), perEl=document.getElementById('givePer'), segs=document.querySelector('.segs');
   var fmt=function(n){return '₹'+n.toLocaleString('en-IN');};
-  function upd(){document.querySelectorAll('[data-freq]').forEach(function(b){b.setAttribute('style',b.dataset.freq===freq?on:off);});
-    document.querySelectorAll('[data-amt]').forEach(function(b){b.setAttribute('style',+b.dataset.amt===amt?'background: #d23563; border-color: #d23563; color: #ffffff':'');});
-    btn.textContent=freq==='monthly'?'Start my Monthly SIP of '+fmt(amt):'Give '+fmt(amt)+' once';msg.hidden=true;}
+  function rollAmount(){
+    if(calm.matches){shown=amt;amtEl.textContent=fmt(amt);return;}
+    var from=shown,to=amt,start=performance.now();
+    (function step(now){
+      var t=clamp((now-start)/280),e=1-Math.pow(1-t,3);
+      shown=Math.round(from+(to-from)*e);amtEl.textContent=fmt(t===1?to:shown);
+      if(t<1&&to===amt)requestAnimationFrame(step);
+    })(start);
+  }
+  function upd(){
+    segs.setAttribute('data-on',freq);
+    document.querySelectorAll('[data-freq]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.freq===freq?'true':'false');});
+    document.querySelectorAll('[data-amt]').forEach(function(b){b.setAttribute('aria-pressed',+b.dataset.amt===amt?'true':'false');});
+    btn.textContent=freq==='monthly'?'Start my Monthly SIP of '+fmt(amt):'Give '+fmt(amt)+' once';
+    perEl.textContent=freq==='monthly'?'every month':'one time';
+    msg.hidden=true;rollAmount();
+  }
   document.querySelectorAll('[data-freq]').forEach(function(b){b.addEventListener('click',function(){freq=b.dataset.freq;upd();});});
   document.querySelectorAll('[data-amt]').forEach(function(b){b.addEventListener('click',function(){amt=+b.dataset.amt;upd();});});
   document.getElementById('donateForm').addEventListener('submit',function(e){e.preventDefault();msg.hidden=false;});
 
-  var open=0;
-  function faq(){document.querySelectorAll('[data-faq]').forEach(function(b){var i=+b.dataset.faq,o=i===open;
-    b.setAttribute('aria-expanded',o?'true':'false');b.style.color=o?'#b8264f':'#17151a';b.lastElementChild.textContent=o?'−':'+';
-    b.parentElement.style.borderColor=o?'#b8264f':'#efe3d3';document.querySelector('[data-faqbody="'+i+'"]').hidden=!o;});}
-  document.querySelectorAll('[data-faq]').forEach(function(b){b.addEventListener('click',function(){var i=+b.dataset.faq;open=open===i?-1:i;faq();});});
+  /* Volunteer FAQ: one open at a time */
+  var openFaq=0;
+  function faq(){document.querySelectorAll('[data-faq]').forEach(function(b){var o=+b.dataset.faq===openFaq;
+    b.setAttribute('aria-expanded',o?'true':'false');b.parentElement.classList.toggle('open',o);});}
+  document.querySelectorAll('[data-faq]').forEach(function(b){b.addEventListener('click',function(){var i=+b.dataset.faq;openFaq=openFaq===i?-1:i;faq();});});
+
+  /* Reveals and one-time counts */
+  if(root.classList.contains('rvon')){
+    var rvIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');rvIO.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.rv').forEach(function(el){rvIO.observe(el);});
+    var cntIO=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting)return;cntIO.unobserve(e.target);
+      var el=e.target,txt=el.dataset.final,v=+txt.replace(/[^0-9]/g,''),pre=txt.charAt(0)==='~'?'~':'',post=txt.slice(-1)==='+'?'+':'',start=performance.now();
+      (function step(now){var t=clamp((now-start)/1200),k=1-Math.pow(1-t,4);el.textContent=t===1?txt:pre+Math.round(v*k).toLocaleString('en-IN')+post;if(t<1)requestAnimationFrame(step);})(start);
+    });},{threshold:.5});
+    document.querySelectorAll('[data-cnt]').forEach(function(el){el.dataset.final=el.textContent;el.setAttribute('aria-label',el.textContent);cntIO.observe(el);});
+  }
+
+  /* Campaigns: the pinned stage walks the cards sideways and fills the step bar */
+  (function(){
+    if(!root.classList.contains('pin'))return;
+    var pin=document.querySelector('.camp-pin'), stage=document.querySelector('.camp-stage'), track=document.querySelector('.camp-track');
+    var cs=[].slice.call(document.querySelectorAll('.camp-card')), steps=[].slice.call(document.querySelectorAll('[data-step]')), pics=cs.map(function(c){return c.querySelector('img');});
+    var n=cs.length, dist=0, cur=-1, raf=0;
+    function size(){stage.style.setProperty('--camp-w',stage.clientWidth+'px');dist=Math.max(0,track.offsetWidth-stage.clientWidth);cur=-1;go();}
+    function target(){var r=pin.getBoundingClientRect(),s=r.height-window.innerHeight;return s>0?clamp(-r.top/s):0;}
+    function paint(p){
+      track.style.transform='translate3d('+(-p*dist).toFixed(1)+'px,0,0)';
+      var a=p*(n-1), active=Math.round(a), mid=window.innerWidth/2;
+      steps.forEach(function(s,i){
+        s.classList.toggle('on',i===active);
+        s.firstElementChild.style.setProperty('--f',clamp(a-i+1).toFixed(3));
+        if(i===active)s.setAttribute('aria-current','step');else s.removeAttribute('aria-current');
+      });
+      cs.forEach(function(c,i){var r=c.getBoundingClientRect();pics[i].style.transform='translate3d('+(((r.left+r.width/2-mid)/window.innerWidth)*-5).toFixed(2)+'%,0,0)';});
+    }
+    function go(){if(!raf)raf=requestAnimationFrame(loop);}
+    function loop(){raf=0;var t=target();if(cur<0)cur=t;cur+=(t-cur)*.16;if(Math.abs(t-cur)<.0005)cur=t;paint(cur);if(cur!==t)go();}
+    steps.forEach(function(s,i){s.addEventListener('click',function(){var r=pin.getBoundingClientRect(),d=r.height-window.innerHeight;window.scrollTo({top:window.scrollY+r.top+d*(i/(n-1)),behavior:'smooth'});});});
+    window.addEventListener('scroll',go,{passive:true});
+    window.addEventListener('resize',size);
+    window.addEventListener('load',size);
+    size();
+  })();
+
+  /* Scroll-linked moments: inked quotes, photo drift, closing photo */
+  var inks=[], drift=[].slice.call(document.querySelectorAll('[data-drift]')), opener=document.querySelector('[data-open]');
+  if(!calm.matches){
+    document.querySelectorAll('[data-ink]').forEach(function(q){
+      var txt=q.textContent, words=txt.split(' ');
+      q.setAttribute('aria-label',txt);q.textContent='';
+      var spans=words.map(function(w,i){var s=document.createElement('span');s.setAttribute('aria-hidden','true');s.textContent=w;q.appendChild(s);if(i<words.length-1)q.appendChild(document.createTextNode(' '));return s;});
+      inks.push({q:q,spans:spans});
+    });
+  }
+  var ixo=document.querySelector('.ixo'), ixoPh=document.querySelector('.ixo-ph');
+  var siteTick=0;
+  function siteScroll(){
+    siteTick=0;
+    var vh=window.innerHeight;
+    if(!calm.matches){
+      inks.forEach(function(it){
+        var r=it.q.getBoundingClientRect();
+        if(r.bottom<-200||r.top>vh+200)return;
+        var p=clamp((vh*.86-r.top)/(vh*.5+r.height*.4)), n=it.spans.length;
+        it.spans.forEach(function(s,i){s.style.opacity=(.16+.84*clamp(p*n-i)).toFixed(3);});
+      });
+      drift.forEach(function(d){
+        var r=d.parentElement.getBoundingClientRect();
+        if(r.bottom<0||r.top>vh)return;
+        var p=(r.top+r.height/2-vh/2)/vh;
+        d.style.transform=d.parentElement.classList.contains('in')?'scale(1.1) translate3d(0,'+(p*-5).toFixed(2)+'%,0)':'';
+      });
+      var ph=ixoPh.getBoundingClientRect();
+      if(ph.bottom>-200){
+        var ko=clamp((vh*.96-ph.top)/(vh*.62));
+        ixo.style.setProperty('--k',ko.toFixed(3));
+        ixo.style.setProperty('--c',((1-ko)*46).toFixed(2)+'%');
+        ixo.style.setProperty('--e',clamp((ko-.72)/.28).toFixed(3));
+      }
+      var or=opener.getBoundingClientRect();
+      if(or.top<vh&&or.bottom>0){
+        var k=clamp((vh-or.top)/(vh*.8));
+        opener.style.setProperty('--s',((1-k)*9).toFixed(2)+'%');
+        opener.style.setProperty('--o',((1-k)*5).toFixed(2)+'%');
+      }
+    }
+  }
+  function queueSite(){if(!siteTick)siteTick=requestAnimationFrame(siteScroll);}
+  window.addEventListener('scroll',queueSite,{passive:true});
+  window.addEventListener('resize',queueSite);
+  siteScroll();
 })();
 </script>
 </body>
